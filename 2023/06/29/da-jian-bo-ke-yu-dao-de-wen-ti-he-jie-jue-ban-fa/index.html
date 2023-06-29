@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="TEXT, LM">
+    <meta name="keywords" content="搭建博客遇到的问题和解决办法, LM">
     <meta name="description" content="LM的个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>TEXT | LM</title>
+    <title>搭建博客遇到的问题和解决办法 | LM</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -235,12 +235,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/logo.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/cover.jpeg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">TEXT</h1>
+                    <h1 class="description center-align post-title">搭建博客遇到的问题和解决办法</h1>
                 </div>
             </div>
         </div>
@@ -356,12 +356,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/text/">
-                                <span class="chip bg-color">text</span>
+                            <a href="/tags/%E9%97%AE%E9%A2%98/">
+                                <span class="chip bg-color">问题</span>
                             </a>
                         
-                            <a href="/tags/%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">学习</span>
+                            <a href="/tags/learn/">
+                                <span class="chip bg-color">learn</span>
                             </a>
                         
                     </div>
@@ -385,21 +385,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-06-12
+                    2023-06-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-06-27
+                    2023-06-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    86
+                    143
                 </div>
                 
 
@@ -429,47 +429,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>这是一篇测试文章</p>
-<p>标题测试：</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><p>图片测试1：<img src="/2023/06/12/text/logo.jpg" class="" title="THIS IS MY LOGO"></p>
-<p>图片测试2：<img src="https://cdn.pixabay.com/photo/2023/06/12/00/11/smartphone-8057248_640.jpg" alt="网络图片"></p>
-<p>代码块测试：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"hello world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <p>在这篇文章我会记录我搭建博客并美化时遇到的问题，以及解决方法<!--（持续更新ing）--></p>
+<hr>
+<h4 id="npm安装没反应"><a href="#npm安装没反应" class="headerlink" title="npm安装没反应"></a>npm安装没反应</h4><p>解决办法：更换淘宝源</p>
+<pre class="line-numbers language-none"><code class="language-none">npm config set registry http://registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>格式测试：<u>下划线</u>    <code>代码</code>    <del>删除线</del>     <!--注释--></p>
-<p>表格：</p>
-<table>
-<thead>
-<tr>
-<th>2002</th>
-<th>WJJ</th>
-<th>born</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>2020</td>
-<td>LMFS</td>
-<td>being</td>
-</tr>
-<tr>
-<td>2023</td>
-<td>LM</td>
-<td>change</td>
-</tr>
-</tbody></table>
-<p>$$<br>22*33=？<br>$$</p>
-<blockquote>
-<p>学习</p>
+<h4 id="hexo-g-报错"><a href="#hexo-g-报错" class="headerlink" title="hexo g 报错"></a>hexo g 报错</h4><h5 id="can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key"><a href="#can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key" class="headerlink" title="can not read a block mapping entry; a multiline key may not be an implicit key"></a><code>can not read a block mapping entry; a multiline key may not be an implicit key</code></h5><p>解决办法：在设置属性后面加空格</p>
+<h4 id="hexo-d报错"><a href="#hexo-d报错" class="headerlink" title="hexo d报错"></a>hexo d报错</h4><h5 id="Error-Spawn-failed-at-ChildProcess"><a href="#Error-Spawn-failed-at-ChildProcess" class="headerlink" title="Error: Spawn failed at ChildProcess"></a><code>Error: Spawn failed at ChildProcess</code></h5><blockquote>
+<p>解决办法：</p>
+<ul>
+<li>删除文件夹 .deploy_git</li>
+<li>执行命令 git config –global core.autocrlf false</li>
+<li>然后就是 hexo clean</li>
+<li>hexo g</li>
+<li>hexo s</li>
+<li>最后查看没问题就可以部署到github上了</li>
+<li>hexo d</li>
+</ul>
 </blockquote>
-<ol>
-<li><p>列表</p>
-</li>
-<li><p>感觉不错</p>
-</li>
-<li><p>胡言乱语</p>
-<p>[^留梦^_^]:</p>
-</li>
-</ol>
 
                 
             </div>
@@ -496,7 +473,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://lmblog.icu/2023/06/12/text/">http://lmblog.icu/2023/06/12/text/</a>
+                    <a href="http://lmblog.icu/2023/06/29/da-jian-bo-ke-yu-dao-de-wen-ti-he-jie-jue-ban-fa/">http://lmblog.icu/2023/06/29/da-jian-bo-ke-yu-dao-de-wen-ti-he-jie-jue-ban-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -534,12 +511,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/text/">
-                                    <span class="chip bg-color">text</span>
+                                <a href="/tags/%E9%97%AE%E9%A2%98/">
+                                    <span class="chip bg-color">问题</span>
                                 </a>
                             
-                                <a href="/tags/%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">学习</span>
+                                <a href="/tags/learn/">
+                                    <span class="chip bg-color">learn</span>
                                 </a>
                             
                         </div>
@@ -583,9 +560,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2023/06/29/da-jian-bo-ke-yu-dao-de-wen-ti-he-jie-jue-ban-fa/">
                     <div class="card-image">
@@ -602,9 +580,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-06-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -617,6 +595,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -636,7 +615,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2023/06/12/text/">
@@ -669,7 +648,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
