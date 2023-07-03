@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>快速进入cmd</title>
+      <link href="/2023/06/30/zai-dang-qian-mu-lu-you-jian-jin-ru-cmd-guan-li-yuan-shen-fen/"/>
+      <url>/2023/06/30/zai-dang-qian-mu-lu-you-jian-jin-ru-cmd-guan-li-yuan-shen-fen/</url>
+      
+        <content type="html"><![CDATA[<p>在任意目录新建文本文档，将以下代码复制进去，保存。修改文件名为cmd.reg，点击执行即可。</p><pre class="line-numbers language-c" data-language="c"><code class="language-c">Windows Registry Editor Version <span class="token number">5.00</span><span class="token punctuation">;</span> Created by<span class="token operator">:</span> Shawn Brink<span class="token punctuation">;</span> http<span class="token operator">:</span><span class="token comment">//www.sevenforums.com</span><span class="token punctuation">;</span> Tutorial<span class="token operator">:</span> http<span class="token operator">:</span><span class="token comment">//www.sevenforums.com/tutorials/47415-open-command-window-here-administrator.html</span><span class="token punctuation">[</span><span class="token operator">-</span>HKEY_CLASSES_ROOT\Directory\shell\runas<span class="token punctuation">]</span><span class="token punctuation">[</span>HKEY_CLASSES_ROOT\Directory\shell\runas<span class="token punctuation">]</span>@<span class="token operator">=</span><span class="token string">"Open cmd here as Admin"</span><span class="token string">"HasLUAShield"</span><span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">[</span>HKEY_CLASSES_ROOT\Directory\shell\runas\command<span class="token punctuation">]</span>@<span class="token operator">=</span><span class="token string">"cmd.exe /s /k pushd \"%V\""</span><span class="token punctuation">[</span><span class="token operator">-</span>HKEY_CLASSES_ROOT\Directory\Background\shell\runas<span class="token punctuation">]</span><span class="token punctuation">[</span>HKEY_CLASSES_ROOT\Directory\Background\shell\runas<span class="token punctuation">]</span>@<span class="token operator">=</span><span class="token string">"Open cmd here as Admin"</span><span class="token string">"HasLUAShield"</span><span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">[</span>HKEY_CLASSES_ROOT\Directory\Background\shell\runas\command<span class="token punctuation">]</span>@<span class="token operator">=</span><span class="token string">"cmd.exe /s /k pushd \"%V\""</span><span class="token punctuation">[</span><span class="token operator">-</span>HKEY_CLASSES_ROOT\Drive\shell\runas<span class="token punctuation">]</span><span class="token punctuation">[</span>HKEY_CLASSES_ROOT\Drive\shell\runas<span class="token punctuation">]</span>@<span class="token operator">=</span><span class="token string">"Open cmd here as Admin"</span><span class="token string">"HasLUAShield"</span><span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">[</span>HKEY_CLASSES_ROOT\Drive\shell\runas\command<span class="token punctuation">]</span>@<span class="token operator">=</span><span class="token string">"cmd.exe /s /k pushd \"%V\""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>如果想要去除，则将下列代码复制到文档，修改文件后缀为reg，点击并执行。</p><pre class="line-numbers language-c" data-language="c"><code class="language-c">Windows Registry Editor Version <span class="token number">5.00</span><span class="token punctuation">;</span> Created by<span class="token operator">:</span> Shawn Brink<span class="token punctuation">;</span> http<span class="token operator">:</span><span class="token comment">//www.sevenforums.com</span><span class="token punctuation">;</span> Tutorial<span class="token operator">:</span> http<span class="token operator">:</span><span class="token comment">//www.sevenforums.com/tutorials/47415-open-command-window-here-administrator.html</span><span class="token punctuation">[</span><span class="token operator">-</span>HKEY_CLASSES_ROOT\Directory\shell\runas<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span>HKEY_CLASSES_ROOT\Directory\Background\shell\runas<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span>HKEY_CLASSES_ROOT\Drive\shell\runas<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术类 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 折腾 </tag>
+            
+            <tag> 方便 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>搭建博客遇到的问题和解决办法</title>
       <link href="/2023/06/29/da-jian-bo-ke-yu-dao-de-wen-ti-he-jie-jue-ban-fa/"/>
       <url>/2023/06/29/da-jian-bo-ke-yu-dao-de-wen-ti-he-jie-jue-ban-fa/</url>
@@ -20,9 +47,9 @@
       
         <tags>
             
-            <tag> 问题 </tag>
-            
             <tag> learn </tag>
+            
+            <tag> 问题 </tag>
             
         </tags>
       

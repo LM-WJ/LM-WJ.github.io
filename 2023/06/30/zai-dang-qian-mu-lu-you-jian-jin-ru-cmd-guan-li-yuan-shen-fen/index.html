@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="搭建博客遇到的问题和解决办法, LM">
+    <meta name="keywords" content="快速进入cmd, LM">
     <meta name="description" content="LM的个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>搭建博客遇到的问题和解决办法 | LM</title>
+    <title>快速进入cmd | LM</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -235,12 +235,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/cover.jpeg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/cmd.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">搭建博客遇到的问题和解决办法</h1>
+                    <h1 class="description center-align post-title">快速进入cmd</h1>
                 </div>
             </div>
         </div>
@@ -250,104 +250,10 @@
 
 
 
-<main class="post-container content">
+<main class="container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
-<style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
-
-    #articleContent :focus {
-        outline: none;
-    }
-
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
-
-    .toc-widget {
-        width: 345px;
-        padding-left: 20px;
-    }
-
-    .toc-widget .toc-title {
-        padding: 35px 0 15px 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
-
-    #toc-content {
-        padding-bottom: 30px;
-        overflow: auto;
-    }
-
-    #toc-content ol {
-        padding-left: 10px;
-    }
-
-    #toc-content ol li {
-        padding-left: 10px;
-    }
-
-    #toc-content .toc-link:hover {
-        color: #42b983;
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-
-        position: absolute;
-        right: 23.5vw;
-        display: block;
-    }
-
-    #toc-content .is-active-link {
-        color: #42b983;
-    }
-
-    #floating-toc-btn {
-        position: fixed;
-        right: 15px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
-
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+    <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -356,12 +262,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/learn/">
-                                <span class="chip bg-color">learn</span>
+                            <a href="/tags/%E6%8A%98%E8%85%BE/">
+                                <span class="chip bg-color">折腾</span>
                             </a>
                         
-                            <a href="/tags/%E9%97%AE%E9%A2%98/">
-                                <span class="chip bg-color">问题</span>
+                            <a href="/tags/%E6%96%B9%E4%BE%BF/">
+                                <span class="chip bg-color">方便</span>
                             </a>
                         
                     </div>
@@ -385,7 +291,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-06-29
+                    2023-06-30
                 </div>
                 
 
@@ -399,7 +305,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    143
+                    211
                 </div>
                 
 
@@ -429,24 +335,66 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>在这篇文章我会记录我搭建博客并美化时遇到的问题，以及解决方法<!--（持续更新ing）--></p>
-<hr>
-<h4 id="npm安装没反应"><a href="#npm安装没反应" class="headerlink" title="npm安装没反应"></a>npm安装没反应</h4><p>解决办法：更换淘宝源</p>
-<pre class="line-numbers language-none"><code class="language-none">npm config set registry http://registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <p>在任意目录新建文本文档，将以下代码复制进去，保存。修改文件名为cmd.reg，点击执行即可。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">Windows Registry Editor Version <span class="token number">5.00</span>
 
-<h4 id="hexo-g-报错"><a href="#hexo-g-报错" class="headerlink" title="hexo g 报错"></a>hexo g 报错</h4><h5 id="can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key"><a href="#can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key" class="headerlink" title="can not read a block mapping entry; a multiline key may not be an implicit key"></a><code>can not read a block mapping entry; a multiline key may not be an implicit key</code></h5><p>解决办法：在设置属性后面加空格</p>
-<h4 id="hexo-d报错"><a href="#hexo-d报错" class="headerlink" title="hexo d报错"></a>hexo d报错</h4><h5 id="Error-Spawn-failed-at-ChildProcess"><a href="#Error-Spawn-failed-at-ChildProcess" class="headerlink" title="Error: Spawn failed at ChildProcess"></a><code>Error: Spawn failed at ChildProcess</code></h5><blockquote>
-<p>解决办法：</p>
-<ul>
-<li>删除文件夹 .deploy_git</li>
-<li>执行命令 git config –global core.autocrlf false</li>
-<li>然后就是 hexo clean</li>
-<li>hexo g</li>
-<li>hexo s</li>
-<li>最后查看没问题就可以部署到github上了</li>
-<li>hexo d</li>
-</ul>
-</blockquote>
+<span class="token punctuation">;</span> Created by<span class="token operator">:</span> Shawn Brink
+
+<span class="token punctuation">;</span> http<span class="token operator">:</span><span class="token comment">//www.sevenforums.com</span>
+
+<span class="token punctuation">;</span> Tutorial<span class="token operator">:</span> http<span class="token operator">:</span><span class="token comment">//www.sevenforums.com/tutorials/47415-open-command-window-here-administrator.html</span>
+
+<span class="token punctuation">[</span><span class="token operator">-</span>HKEY_CLASSES_ROOT\Directory\shell\runas<span class="token punctuation">]</span>
+
+<span class="token punctuation">[</span>HKEY_CLASSES_ROOT\Directory\shell\runas<span class="token punctuation">]</span>
+
+@<span class="token operator">=</span><span class="token string">"Open cmd here as Admin"</span>
+
+<span class="token string">"HasLUAShield"</span><span class="token operator">=</span><span class="token string">""</span>
+
+<span class="token punctuation">[</span>HKEY_CLASSES_ROOT\Directory\shell\runas\command<span class="token punctuation">]</span>
+
+@<span class="token operator">=</span><span class="token string">"cmd.exe /s /k pushd \"%V\""</span>
+
+<span class="token punctuation">[</span><span class="token operator">-</span>HKEY_CLASSES_ROOT\Directory\Background\shell\runas<span class="token punctuation">]</span>
+
+<span class="token punctuation">[</span>HKEY_CLASSES_ROOT\Directory\Background\shell\runas<span class="token punctuation">]</span>
+
+@<span class="token operator">=</span><span class="token string">"Open cmd here as Admin"</span>
+
+<span class="token string">"HasLUAShield"</span><span class="token operator">=</span><span class="token string">""</span>
+
+<span class="token punctuation">[</span>HKEY_CLASSES_ROOT\Directory\Background\shell\runas\command<span class="token punctuation">]</span>
+
+@<span class="token operator">=</span><span class="token string">"cmd.exe /s /k pushd \"%V\""</span>
+
+<span class="token punctuation">[</span><span class="token operator">-</span>HKEY_CLASSES_ROOT\Drive\shell\runas<span class="token punctuation">]</span>
+
+<span class="token punctuation">[</span>HKEY_CLASSES_ROOT\Drive\shell\runas<span class="token punctuation">]</span>
+
+@<span class="token operator">=</span><span class="token string">"Open cmd here as Admin"</span>
+
+<span class="token string">"HasLUAShield"</span><span class="token operator">=</span><span class="token string">""</span>
+
+<span class="token punctuation">[</span>HKEY_CLASSES_ROOT\Drive\shell\runas\command<span class="token punctuation">]</span>
+
+@<span class="token operator">=</span><span class="token string">"cmd.exe /s /k pushd \"%V\""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如果想要去除，则将下列代码复制到文档，修改文件后缀为reg，点击并执行。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">Windows Registry Editor Version <span class="token number">5.00</span>
+
+<span class="token punctuation">;</span> Created by<span class="token operator">:</span> Shawn Brink
+
+<span class="token punctuation">;</span> http<span class="token operator">:</span><span class="token comment">//www.sevenforums.com</span>
+
+<span class="token punctuation">;</span> Tutorial<span class="token operator">:</span> http<span class="token operator">:</span><span class="token comment">//www.sevenforums.com/tutorials/47415-open-command-window-here-administrator.html</span>
+
+<span class="token punctuation">[</span><span class="token operator">-</span>HKEY_CLASSES_ROOT\Directory\shell\runas<span class="token punctuation">]</span>
+
+<span class="token punctuation">[</span><span class="token operator">-</span>HKEY_CLASSES_ROOT\Directory\Background\shell\runas<span class="token punctuation">]</span>
+
+<span class="token punctuation">[</span><span class="token operator">-</span>HKEY_CLASSES_ROOT\Drive\shell\runas<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -473,7 +421,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://lmblog.icu/2023/06/29/da-jian-bo-ke-yu-dao-de-wen-ti-he-jie-jue-ban-fa/">http://lmblog.icu/2023/06/29/da-jian-bo-ke-yu-dao-de-wen-ti-he-jie-jue-ban-fa/</a>
+                    <a href="http://lmblog.icu/2023/06/30/zai-dang-qian-mu-lu-you-jian-jin-ru-cmd-guan-li-yuan-shen-fen/">http://lmblog.icu/2023/06/30/zai-dang-qian-mu-lu-you-jian-jin-ru-cmd-guan-li-yuan-shen-fen/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -511,12 +459,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/learn/">
-                                    <span class="chip bg-color">learn</span>
+                                <a href="/tags/%E6%8A%98%E8%85%BE/">
+                                    <span class="chip bg-color">折腾</span>
                                 </a>
                             
-                                <a href="/tags/%E9%97%AE%E9%A2%98/">
-                                    <span class="chip bg-color">问题</span>
+                                <a href="/tags/%E6%96%B9%E4%BE%BF/">
+                                    <span class="chip bg-color">方便</span>
                                 </a>
                             
                         </div>
@@ -560,9 +508,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2023/06/30/zai-dang-qian-mu-lu-you-jian-jin-ru-cmd-guan-li-yuan-shen-fen/">
                     <div class="card-image">
@@ -579,9 +528,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-06-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -594,6 +543,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -616,23 +566,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/06/12/text/">
+                <a href="/2023/06/29/da-jian-bo-ke-yu-dao-de-wen-ti-he-jie-jue-ban-fa/">
                     <div class="card-image">
                         
-                        <img src="/images/logo.jpg" class="responsive-img" alt="TEXT">
+                        <img src="/images/cover.jpeg" class="responsive-img" alt="搭建博客遇到的问题和解决办法">
                         
-                        <span class="card-title">TEXT</span>
+                        <span class="card-title">搭建博客遇到的问题和解决办法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            测试博客内容的显示效果
+                            记录搭建博客过程中遇到的问题以及解决办法，希望这些内容可以帮到你
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-29
                             </span>
                         <span class="publish-author">
                             
@@ -649,12 +599,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/text/">
-                        <span class="chip bg-color">text</span>
-                    </a>
-                    
                     <a href="/tags/learn/">
                         <span class="chip bg-color">learn</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%97%AE%E9%A2%98/">
+                        <span class="chip bg-color">问题</span>
                     </a>
                     
                 </div>
@@ -723,100 +673,6 @@
 
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h1,h2, h3, h4,h5'
-        });
-
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
-
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h1,h2, h3, h4,h5').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
 
     
 
