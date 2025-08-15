@@ -9,7 +9,7 @@
     
     <title>
         
-            Category: 技术类 |
+            我的书世界 |
         
         韦建杰的个人站
     </title>
@@ -53,13 +53,12 @@
 
 
 <main class="page-container border-box">
-    <!-- home first screen  -->
+  <!-- 页面主内容 -->
+  <div class="page-main-content border-box">
     
-
-    <!-- page content -->
-    <div class="page-main-content border-box">
-        <div class="page-main-content-top">
-            
+    <!-- 顶部导航 -->
+    <div class="page-main-content-top">
+      
 <header class="header-wrapper">
 
     <div class="border-box header-content">
@@ -99,7 +98,7 @@
                         </li>
                     
                         
-                        <li class="menu-item flex-start border-box">
+                        <li class="menu-item flex-start border-box active">
                             <a class="menu-text-color border-box" href="/project/books">
                                 
                                 读书
@@ -158,7 +157,7 @@
                 </li>
             
                 
-                <li class="drawer-menu-item border-box not-sub-menu">
+                <li class="drawer-menu-item border-box not-sub-menu active">
                     <label class="drawer-menu-label border-box">
                         <a class="drawer-menu-text-color left-side flex-start border-box" href="/project/books">
                             
@@ -189,56 +188,108 @@
 </header>
 
 
-        </div>
-
-        <div class="page-main-content-middle border-box">
-
-            <div class="main-content border-box">
-                
-
-                    <div class="fade-in-down-animation">
-    <div class="category-archive-container border-box">
-        <div class="category-name">
-            <i class="fas fa-folder"></i>&nbsp;技术类
-        </div>
-        <div class="category-post-list">
-            
-<div class="archive-list-container border-box">
-    
-        <section class="archive-item border-box">
-            <div class="archive-item-header border-box">
-                <span class="archive-year">2023</span>
-            </div>
-            <ul class="archive-item-body border-box">
-                
-                    <li class="post-item border-box">
-                        <span class="starting-point border-box flex-center"></span>
-                        <span class="post-date border-box">06-29</span>
-                        <a class="post-title border-box text-ellipsis"
-                           href="/project/2023/06/29/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"
-                        >搭建博客遇到的问题和解决办法</a>
-                    </li>
-                
-            </ul>
-        </section>
-    
-</div>
-
-        </div>
     </div>
-    
 
+    <!-- 中间主要内容区 -->
+    <div class="page-main-content-middle border-box">
+      <div class="main-content border-box">
+        
+        <!-- 书籍标题 -->
+        <header class="page-header">
+          <h1 class="page-title">我的书世界</h1>
+        </header>
 
+        <!-- 书籍展示区 -->
+        
 
-</div>
-
-
-                
-            </div>
+        <div id="books-grid" class="books-grid">
+          
+            <article class="book-card" tabindex="0">
+              <div class="cover-wrap">
+                 <img src="/project/images/books/default.jpg" alt="读不懂的海子的诗 封面" loading="lazy">
+              </div>
+                <div class="info">
+                  <h3 class="title"><a href="/project/2023/11/02/%E8%AF%BB%E4%B8%8D%E6%87%82%E7%9A%84%E6%B5%B7%E5%AD%90%E7%9A%84%E8%AF%97/">读不懂的海子的诗</a></h3>
+                  <p class="meta">LM · 2023-11</p>
+                  <p class="excerpt"></p>
+                </div>
+              </article>
+          
+            <article class="book-card" tabindex="0">
+              <div class="cover-wrap">
+                 <img src="/project/images/books/1984.jpg" alt="《一九八四》 封面" loading="lazy">
+              </div>
+                <div class="info">
+                  <h3 class="title"><a href="/project/2023/09/06/%E3%80%8A%E4%B8%80%E4%B9%9D%E5%85%AB%E5%9B%9B%E3%80%8B%E8%AF%BB%E5%90%8E%E6%84%9F/">《一九八四》</a></h3>
+                  <p class="meta">乔治·奥威尔 · 2023-09</p>
+                  <p class="excerpt"></p>
+                </div>
+              </article>
+          
         </div>
+        
+      </main>
 
-        <div class="page-main-content-bottom border-box">
-            
+      <style>
+      .books-grid{
+        display:grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+        gap:18px;
+        margin:18px 0 60px;
+        align-items:start;
+      }
+
+      .book-card{
+        background:rgba(255,255,255,0.03);
+        border-radius:12px;
+        overflow:hidden;
+        box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+        transform-origin:center;
+        transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s;
+        opacity:0;
+        transform: translateY(14px) scale(.995);
+        will-change: transform, opacity;
+        outline: none;
+      }
+      .book-card:focus,
+      .book-card:hover{
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 18px 40px rgba(2,6,23,0.6);
+      }
+
+      .cover-wrap{height:240px; overflow:hidden; display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.06))}
+      .cover-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+
+      .info{padding:12px}
+      .title{margin:0 0 6px;font-size:15px}
+      .title a{color:inherit;text-decoration:none}
+      .meta{color:#9fb0c8;font-size:12px;margin-bottom:8px}
+      .excerpt{font-size:13px;color:#cfe7ff;opacity:.87;line-height:1.45}
+
+      .book-card.in{opacity:1; transform: translateY(0) scale(1); transition: transform .45s cubic-bezier(.2,.9,.3,1), opacity .45s;}
+      </style>
+
+      <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        const cards = Array.from(document.querySelectorAll('.book-card'));
+        if(!cards.length) return;
+        let observer = new IntersectionObserver((entries)=>{
+          entries.forEach(ent=>{
+            if(ent.isIntersecting){
+              const el = ent.target;
+              const idx = cards.indexOf(el);
+              setTimeout(()=> el.classList.add('in'), idx * 60);
+              observer.unobserve(el);
+            }
+          });
+        }, {threshold: 0.12});
+        cards.forEach(c=>observer.observe(c));
+      });
+      </script>
+
+    <!-- 底部 -->
+    <div class="page-main-content-bottom border-box">
+      
 <footer class="footer border-box">
     <div class="copyright-info info-item">
     &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2025
@@ -258,73 +309,9 @@
     
 </footer>
 
-        </div>
     </div>
-
-    <!-- post tools -->
-    
-
-    <!-- side tools -->
-    <div class="side-tools">
-        <div class="side-tools-container border-box ">
-    <ul class="side-tools-list side-tools-show-handle border-box">
-        <li class="tools-item tool-font-adjust-plus flex-center">
-            <i class="fas fa-search-plus"></i>
-        </li>
-
-        <li class="tools-item tool-font-adjust-minus flex-center">
-            <i class="fas fa-search-minus"></i>
-        </li>
-
-        <!-- toggle mode -->
-        
-            <li class="tools-item tool-toggle-theme-mode flex-center">
-                <i class="fas fa-moon"></i>
-            </li>
-        
-
-        <!-- rss -->
-        
-
-        <!-- to bottom -->
-        <li class="tools-item tool-scroll-to-bottom flex-center">
-            <i class="fas fa-arrow-down"></i>
-        </li>
-    </ul>
-
-    <ul class="exposed-tools-list border-box">
-        
-
-        
-
-        <li class="tools-item tool-toggle-show flex-center">
-            <i class="fas fa-cog fa-spin"></i>
-        </li>
-
-        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
-            <i class="arrow fas fa-arrow-up"></i>
-            <span class="percent"></span>
-        </li>
-    </ul>
-</div>
-
-    </div>
-
-    <!-- image mask -->
-    <div class="zoom-in-image-mask">
-    <img class="zoom-in-image">
-</div>
-
-
-    <!-- local search -->
-    
-
-    <!-- tablet toc -->
-    
+  </div>
 </main>
-
-
-
 
 
 
@@ -359,10 +346,6 @@
     
 
     <!-- categories page -->
-    
-        
-<script src="/project/js/page/category-page.js"></script>
-
     
 
     <!-- links page -->
