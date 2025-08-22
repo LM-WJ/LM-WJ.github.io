@@ -9,7 +9,7 @@
     
     <title>
         
-            搭建博客遇到的问题和解决办法 |
+            Archive: 2025 |
         
         韦建杰的个人站
     </title>
@@ -226,238 +226,37 @@
             <div class="main-content border-box">
                 
 
-                    
-<div class="fade-in-down-animation">
-    <div class="post-page-container border-box">
-        <div class="post-content-container border-box">
+                    <div class="fade-in-down-animation">
+    <div class="archives-container">
+        <div class="archives-timeline border-box">
             
-
-            <div class="post-content-bottom border-box">
+<div class="archive-list-container border-box">
+    
+        <section class="archive-item border-box">
+            <div class="archive-item-header border-box">
+                <span class="archive-year">2025</span>
+            </div>
+            <ul class="archive-item-body border-box">
                 
-                    <div class="post-title">
-                        搭建博客遇到的问题和解决办法
-                    </div>
+                    <li class="post-item border-box">
+                        <span class="starting-point border-box flex-center"></span>
+                        <span class="post-date border-box">08-20</span>
+                        <a class="post-title border-box text-ellipsis"
+                           href="/2025/08/20/%E5%A6%82%E4%BD%95%E5%81%87%E8%A3%85%E8%87%AA%E5%B7%B1%E6%98%AF%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E5%AE%B6/"
+                        ></a>
+                    </li>
                 
-
-                
-                    <div class="post-header border-box">
-                        
-                            <div class="avatar-box border-box">
-                                <img src="/images/avatar.jpg">
-                            </div>
-                        
-                        <div class="info-box">
-                            <div class="author border-box">
-                                <span class="name">LM</span>
-                                
-                            </div>
-                            <div class="meta-info border-box">
-                                
-
-<div class="post-meta-info-container border-box post">
-    <div class="post-meta-info border-box">
-        
-
-        
-            <span class="meta-info-item post-create-date">
-                <i class="icon fa-solid fa-star"></i>&nbsp;
-                <span class="datetime">2023-06-29</span>
-            </span>
-
-            
-                <span class="meta-info-item post-update-date">
-                    <i class="icon fa-solid fa-arrows-rotate"></i>&nbsp;
-                    <span class="datetime" data-updated="Sat Jul 15 2023 16:54:58 GMT+0800">2023-07-15</span>
-                </span>
-            
-        
-
-        
-            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
-                <ul class="post-category-ul">
-                    
-                            <li class="category-item"><a href="/categories/%E6%8A%80%E6%9C%AF%E7%B1%BB/">技术类</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-            <span class="post-tag meta-info-item border-box">
-                <ul class="post-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E9%97%AE%E9%A2%98/">问题</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/learn/">learn</a></li>
-                        
-                    
-                </ul>
-            </span>
-        
-
-        
-        
-            <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>258 Words</span>
-            </span>
-        
-        
-            <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>1 Mins</span>
-            </span>
-        
-        
-    </div>
-
+            </ul>
+        </section>
     
 </div>
 
-                            </div>
-                        </div>
-                    </div>
-                
-
-                <div class="post-content keep-markdown-body ">
-                    
-
-                    
-                         <p>在这篇文章我会记录我搭建博客并美化时遇到的问题，以及解决方法<!--（持续更新ing）--></p>
-<hr>
-<h4 id="npm安装没反应"><a href="#npm安装没反应" class="headerlink" title="npm安装没反应"></a>npm安装没反应</h4><p>解决办法：更换淘宝源</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry http://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-<h4 id="hexo-g-报错"><a href="#hexo-g-报错" class="headerlink" title="hexo g 报错"></a>hexo g 报错</h4><h5 id="can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key"><a href="#can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key" class="headerlink" title="can not read a block mapping entry; a multiline key may not be an implicit key"></a><code>can not read a block mapping entry; a multiline key may not be an implicit key</code></h5><p>解决办法：在设置属性后面加空格</p>
-<h4 id="hexo-d报错"><a href="#hexo-d报错" class="headerlink" title="hexo d报错"></a>hexo d报错</h4><h5 id="Error-Spawn-failed-at-ChildProcess"><a href="#Error-Spawn-failed-at-ChildProcess" class="headerlink" title="Error: Spawn failed at ChildProcess"></a><code>Error: Spawn failed at ChildProcess</code></h5><blockquote>
-<p>解决办法：</p>
-<ul>
-<li>删除文件夹 .deploy_git</li>
-<li>执行命令 git config –global core.autocrlf false</li>
-<li>然后就是 hexo clean</li>
-<li>hexo g</li>
-<li>hexo s</li>
-<li>最后查看没问题就可以部署到github上了</li>
-<li>hexo d</li>
-</ul>
-</blockquote>
-<h4 id="博客无法访问"><a href="#博客无法访问" class="headerlink" title="博客无法访问"></a>博客无法访问</h4><p>上周我为了让博客访问速度加快一点，于是就把博客项目从GitHub迁到了vercel，以及使用cloud flare来提供CDN加速。部署完之后就等着一天之后自动更新dns，结果第二天cloud flare和vercel陆续给我发来了邮件说域名配置出错。今天看了cloud flare的提示，将指向vercel的dns服务器删去，马上恢复了正常访问🤣。</p>
-
-                    
-                </div>
-
-                
-
-                <div class="post-bottom-tags-and-share border-box">
-                    <div>
-                        
-                            <ul class="post-tags-box border-box">
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E9%97%AE%E9%A2%98/">问题</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/learn/">learn</a>
-                                    </li>
-                                
-                            </ul>
-                        
-                    </div>
-                    <div>
-                        
-                    </div>
-                </div>
-
-                
-
-                
-                    <div class="post-nav border-box">
-                        
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2023/08/20/%E5%85%B3%E4%BA%8E%E2%80%9C%E7%95%99%E6%A2%A6%E2%80%9D/"
-                                   title="关于“留梦”"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">关于“留梦”</span>
-                                        <span class="post-nav-item">Prev posts</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
-                        
-                    </div>
-                
-
-                
-                    
-
-
-    <div class="comments-container border-box">
-        <div id="comments-anchor" class="comment-area-title border-box">
-            <i class="fas fa-comments"></i>&nbsp;Comments
         </div>
-        <div class="comment-plugin-fail border-box">
-    <span class="fail-tip">Comment plugin failed to load</span>
-    <button class="reload keep-button">Click to reload</button>
-</div>
-<div class="comment-plugin-loading flex-center border-box">
-    <i class="loading-icon fa-solid fa-spinner fa-spin"></i>
-    <span class="load-tip">Loading comment plugin</span>
-</div>
-<script data-pjax>
-  window.KeepCommentPlugin = {}
-  window.KeepCommentPlugin.hideLoading = () => {
-    const cplDom = document.querySelector('.comments-container .comment-plugin-loading')
-    cplDom.style.display = 'none'
-  }
-  window.KeepCommentPlugin.loadFailHandle = () => {
-    window.KeepCommentPlugin.hideLoading()
-    const cpfDom = document.querySelector('.comments-container .comment-plugin-fail')
-    cpfDom.style.display = 'flex'
-    cpfDom.querySelector('.reload').addEventListener('click', () => {
-      window.location.reload()
-    })
-  }
-</script>
-
-        
-            
-
-    <div class="configuration-items-error-tip border-box">
-    <i class="fa-solid fa-circle-exclamation"></i>
-    Please fill in the required configuration items for Valine comment plugin
-</div>
-
-
-
-        
     </div>
+    
 
 
 
-
-
-                
-            </div>
-        </div>
-
-        
-            <div class="pc-post-toc right-toc">
-                <div class="post-toc-wrap border-box">
-    <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#npm%E5%AE%89%E8%A3%85%E6%B2%A1%E5%8F%8D%E5%BA%94"><span class="nav-text">npm安装没反应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo-g-%E6%8A%A5%E9%94%99"><span class="nav-text">hexo g 报错</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key"><span class="nav-text">can not read a block mapping entry; a multiline key may not be an implicit key</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo-d%E6%8A%A5%E9%94%99"><span class="nav-text">hexo d报错</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Error-Spawn-failed-at-ChildProcess"><span class="nav-text">Error: Spawn failed at ChildProcess</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE"><span class="nav-text">博客无法访问</span></a></li></ol>
-    </div>
-</div>
-
-            </div>
-        
-    </div>
 </div>
 
 
@@ -486,7 +285,7 @@
             
                 <span class="count-item border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">2.6k</span>
+                    <span class="item-value border-box word">2.4k</span>
                 </span>
             
 
@@ -508,36 +307,6 @@
     </div>
 
     <!-- post tools -->
-    
-        <div class="post-tools right-toc">
-            <div class="post-tools-container border-box">
-    <ul class="post-tools-list border-box">
-        <!-- PC encrypt again -->
-        
-
-        <!-- PC TOC show toggle -->
-        
-            <li class="tools-item flex-center toggle-show-toc">
-                <i class="fas fa-list"></i>
-            </li>
-        
-
-        <!-- PC go comment -->
-        
-            <li class="tools-item flex-center go-to-comments">
-                <i class="fas fa-comment"></i>
-                <span class="post-comments-count"></span>
-            </li>
-        
-
-        <!-- PC full screen -->
-        <li class="tools-item flex-center full-screen">
-            <i class="fa-solid fa-expand"></i>
-        </li>
-    </ul>
-</div>
-
-        </div>
     
 
     <!-- side tools -->
@@ -570,15 +339,7 @@
 
     <ul class="exposed-tools-list border-box">
         
-            <li class="tools-item toggle-show-toc-tablet flex-center">
-                <i class="fas fa-list"></i>
-            </li>
-        
 
-        
-            <li class="tools-item go-to-comments-tablet flex-center">
-                <i class="fas fa-comment"></i>
-            </li>
         
 
         <li class="tools-item tool-toggle-show flex-center">
@@ -634,18 +395,8 @@
 
     <!-- tablet toc -->
     
-        <div class="tablet-post-toc-mask">
-            <div class="tablet-post-toc">
-                <div class="post-toc-wrap border-box">
-    <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#npm%E5%AE%89%E8%A3%85%E6%B2%A1%E5%8F%8D%E5%BA%94"><span class="nav-text">npm安装没反应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo-g-%E6%8A%A5%E9%94%99"><span class="nav-text">hexo g 报错</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key"><span class="nav-text">can not read a block mapping entry; a multiline key may not be an implicit key</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo-d%E6%8A%A5%E9%94%99"><span class="nav-text">hexo d报错</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Error-Spawn-failed-at-ChildProcess"><span class="nav-text">Error: Spawn failed at ChildProcess</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE"><span class="nav-text">博客无法访问</span></a></li></ol>
-    </div>
-</div>
-
-            </div>
-        </div>
-    
 </main>
+
 
 
 
@@ -683,24 +434,6 @@
     
 
     <!-- post page -->
-    
-        <!-- post-helper -->
-        
-<script src="/js/post/post-helper.js"></script>
-
-
-        <!-- toc -->
-        
-            
-<script src="/js/post/toc.js"></script>
-
-        
-
-        <!-- copyright-info -->
-        
-
-        <!-- share -->
-        
     
 
     <!-- categories page -->
