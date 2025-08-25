@@ -242,7 +242,7 @@
             <div class="page-content border-box keep-markdown-body ">
                 
                     <h3 id="welcome-ヾ-≧▽≦-o"><a href="#welcome-ヾ-≧▽≦-o" class="headerlink" title="welcome!ヾ(≧▽≦*)o"></a>welcome!ヾ(≧▽≦*)o</h3><p>欢迎！陌生人，或者是某位认识我的朋友？(¬‿¬)</p>
-<p>欢迎你点进我的blog，并且打开这篇文章ヾ(•ω•&#96;)o。你大概是想了解或者深入了解我是什么样的人吧，如你所愿，这里是关于我的各种信息，爱好，信仰，生活经历等等(☞ﾟヮﾟ)☞</p>
+<p>欢迎你点进我的blog，并且打开这篇文章ヾ(•ω•&#96;)o，你大概是想了解或者深入了解我是什么样的人吧，如你所愿，这里是关于我的各种信息，爱好，信仰，生活经历等等(☞ﾟヮﾟ)☞</p>
 <h3 id="基本个人信息"><a href="#基本个人信息" class="headerlink" title="基本个人信息"></a>基本个人信息</h3><table>
 <thead>
 <tr>
@@ -291,6 +291,77 @@
 <h3 id="信仰"><a href="#信仰" class="headerlink" title="信仰"></a>信仰</h3><p>人活着是为了什么呢，我到处探寻一个答案，后来发现活着并没有什么特定的意义,活着本身既是原因也是结果，时间终会抹去一切痕迹，所谓活着是为了让世界更美好，那只是为了活着而找的一个信仰。人活着不能没有信仰，有的人信神，有的人信人，有的人信物。我信道，我自己的道，我出现在这人间是为了体验，体验成功，体验失败，体验七情六欲，一切都是体验，所以我喜欢新鲜的事物，那是一种新的体验，我也喜欢旧的事物，那也是一种新的体验。</p>
 <p>建构现代教育系统的重要⼈物威廉·冯·洪堡(Wilhelm von Humboldt)曾说，存在的⽬的就是“在⽣命最⼴泛的体验中，提炼出智慧”，他还写道：“⽣命只有⼀座要征服的⾼峰——设法体验⼀切⾝为⼈的感觉。” 这也是我长期的人生信仰。</p>
 <h3 id="生活经历"><a href="#生活经历" class="headerlink" title="生活经历"></a>生活经历</h3><p>如果将智人社会阶层分为三层的话,我从出生到现在肯定是一直在最后一层徘徊,大概是一直在向上爬,但是几乎所有人都在向上爬,我也不知道自己在前进还是后退,亦或者原地踏步,不过可以肯定的是,我一直呆在第三层,不曾出去.</p>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><style>
+.contact-icons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contact-icons a {
+  display: inline-block;
+  margin: 0 40px; /* 间隔更大 */
+  color: #333;
+  text-decoration: none;
+  position: relative;
+}
+
+.contact-icons a i {
+  font-size: 40px !important;  /* 强制设置图标大小 */
+  transition: color 0.3s;
+}
+
+/* 悬停时不同颜色 */
+.contact-icons a.github:hover i { color: #000; }
+.contact-icons a.telegram:hover i { color: #229ED9; }
+.contact-icons a.email:hover i { color: #FF5722; }
+.contact-icons a.wechat:hover i { color: #1AAD19; }
+
+/* 微信二维码弹窗 */
+.contact-icons a.wechat .qr {
+  display: none;
+  position: absolute;
+  top: -400px;   /* 图标上方 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px !important;   /* 强制宽度 */
+  max-width: none !important; /* 防止主题限制最大宽度 */
+  height: auto !important;   /* 保持比例缩放 */
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+
+@media screen and (max-width: 768px) {
+  .contact-icons a.wechat .qr {
+    width: 70% !important;   /* 手机端宽度 = 屏幕的 70% */
+    top: -400px;             /* 根据需要调整位置 */
+  }
+}
+
+.contact-icons a.wechat:hover .qr {
+  display: block;
+}
+</style>
+
+<div class="contact-icons">
+  <a href="https://github.com/lm-wj" target="_blank" class="github">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="https://t.me/nuwanda_feynman" target="_blank" class="telegram">
+    <i class="fab fa-telegram"></i>
+  </a>
+  <a href="mailto:wuhufufu@gmail.com" class="email">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="javascript:void(0);" class="wechat">
+    <i class="fab fa-weixin"></i>
+    <img     src="/images/wechat_qr.png"   alt="微信二维码" class="qr">
+  </a>
+</div>
 
                 
             </div>
