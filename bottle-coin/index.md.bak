@@ -1,0 +1,31 @@
+---
+
+---
+
+---
+title: 奶瓶币
+date: 2026-01-10
+type: "bottle-coin"
+comments: false
+---
+
+<style>
+/* 从 artifact 中复制所有 <style> 标签内的 CSS */
+</style>
+
+<!-- 从 artifact 中复制 <body> 标签内的所有 HTML -->
+
+<script>
+/* 从 artifact 中复制所有 <script> 标签内的 JavaScript */
+</script>
+
+```
+4. **或者直接创建 HTML 文件：**
+在 `source/bottle-coin/` 目录下创建 `index.html`，把整个 artifact 的完整 HTML 代码复制进去。
+
+## 方法二：作为自定义 HTML 页面
+
+1. **在 `source` 目录下创建文件：**
+```
+
+source/bottle-coin.html
