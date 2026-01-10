@@ -347,7 +347,7 @@
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-top: 30px;
         }
@@ -381,23 +381,79 @@
             opacity: 0.9;
         }
 
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
-            padding: 18px 50px;
+            padding: 18px 40px;
             border-radius: 50px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
             text-decoration: none;
             box-shadow: 0 5px 20px rgba(245, 87, 108, 0.4);
             transition: all 0.3s ease;
-            margin-top: 20px;
         }
 
         .cta-button:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 30px rgba(245, 87, 108, 0.6);
+        }
+
+        .cta-button.secondary {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            box-shadow: 0 5px 20px rgba(79, 172, 254, 0.4);
+        }
+
+        .cta-button.secondary:hover {
+            box-shadow: 0 8px 30px rgba(79, 172, 254, 0.6);
+        }
+
+        .whitepaper-section {
+            color: #333;
+        }
+
+        .whitepaper-section h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .whitepaper-section p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .whitepaper-section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .whitepaper-section li {
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .disclaimer {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            color: #856404;
+        }
+
+        .disclaimer h4 {
+            margin-bottom: 10px;
+            color: #856404;
         }
 
         .footer {
@@ -407,6 +463,21 @@
             padding: 20px;
             font-size: 1rem;
         }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .logo {
+                font-size: 5rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+            }
+            .cta-button {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -414,13 +485,13 @@
         <div class="header">
             <div class="logo">🍼</div>
             <h1>奶瓶币 BOTTLE COIN</h1>
-            <p class="subtitle">为爱发行 · 社群驱动 · 纯粹Meme</p>
+            <p class="subtitle">哺育未来 · 共享成长 · 为爱发行</p>
         </div>
 
         <div class="card">
             <h2>🍼 关于奶瓶币</h2>
             <div class="description">
-                奶瓶是币安官方Telegram社群上一位深受群友喜爱的交易巨擎，奶瓶币是奶瓶的头号粉丝刘思梦为爱发行的粉丝代币。这是一个纯粹的社群项目，致力于将奶瓶的影响力带到区块链世界。
+                奶瓶是币安官方Telegram社群上一位深受群友喜爱的交易巨擎，奶瓶币（FBC）是奶瓶的头号粉丝刘思梦为爱发行的粉丝代币。这不仅仅是一个代币，它是链接全球公益、母婴产业与去中心化金融（DeFi）的纽带，致力于将奶瓶的影响力带到区块链世界。
             </div>
         </div>
 
@@ -450,12 +521,42 @@
             </div>
         </div>
 
+        <div class="card">
+            <h2>📄 白皮书</h2>
+            <div class="whitepaper-section">
+                <h3>1. 项目愿景 (Vision)</h3>
+                <p>在动荡的加密货币市场中，我们寻求建立一个像"奶瓶"一样具有滋养感和安全性的生态系统。奶瓶币（FBC）不仅仅是一个代币，它是链接全球公益、母婴产业与去中心化金融（DeFi）的纽带。我们的核心目标是：<strong>"哺育未来，共享成长。"</strong></p>
+
+                <h3>2. 核心痛点与解决方案</h3>
+                <p><strong>市场波动剧烈：</strong> FBC 通过独特的"成长基金"机制，鼓励长期持有。</p>
+                <p><strong>公益透明度低：</strong> 利用区块链不可篡改性，确保每一份流向儿童福利机构的捐赠都可追溯。</p>
+                <p><strong>母婴消费门槛：</strong> 建立去中心化商城，持有 FBC 可享受母婴产品折扣。</p>
+
+                <h3>3. 技术架构 (Technology)</h3>
+                <p><strong>发行链：</strong> 基于币安智能链（BSC）或 Solana（高吞吐、低费率）。</p>
+                <p><strong>智能合约特性：</strong></p>
+                <ul>
+                    <li><strong>自动分红：</strong> 每笔交易的 2% 自动按比例分配给所有持有者。</li>
+                    <li><strong>公益资金池：</strong> 每笔交易的 1% 自动划入透明的公益钱包。</li>
+                    <li><strong>流动性锁定：</strong> 初始流动性将锁定 2 年，确保项目安全。</li>
+                </ul>
+
+                <div class="disclaimer">
+                    <h4>⚠️ 免责声明 (Disclaimer)</h4>
+                    <p>奶瓶币（FBC）是一种实验性的数字资产。加密货币投资具有极高风险，本文件不构成投资建议。请在您所在法律辖区的许可范围内进行操作。</p>
+                </div>
+            </div>
+        </div>
+
         <div class="card" style="text-align: center;">
             <h2>🚀 加入我们</h2>
             <p style="color: #666; font-size: 1.1rem; margin-bottom: 20px;">
                 成为奶瓶币社群的一员，一起见证Meme的力量！
             </p>
-            <a class="link"   href="https://t.me/BinanceChinese"  class="cta-button" target="_blank">🍼 立即参与<i class="fas fa-external-link-alt"></i></a>
+            <div class="cta-buttons">
+                <a class="link"   href="https://t.me/BinanceChinese"  class="cta-button" target="_blank">💬 社群讨论<i class="fas fa-external-link-alt"></i></a>
+                <a class="link"   href="https://t.me/xl3grul2k7cl3"  class="cta-button secondary" target="_blank">👤 Follow 奶瓶<i class="fas fa-external-link-alt"></i></a>
+            </div>
         </div>
 
         <div class="footer">
