@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>曼德尔球 Mandelbulb</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #080812; color: #ccc; font-family: 'Courier New', monospace; }
+canvas { display: block; width: 100%; height: min(65vh, 560px); cursor: grab; touch-action: none; }
+canvas:active { cursor: grabbing; }
+#controls {
+  padding: 14px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  background: #0d0d1a;
+  border-top: 1px solid #222244;
+}
+.ctrl { display: flex; flex-direction: column; gap: 4px; }
+label { font-size: 12px; color: #8888aa; }
+input[type=range] {
+  width: 100%; accent-color: #009999;
+  background: transparent;
+}
+#btns { display: flex; gap: 8px; padding: 10px 20px; background: #0d0d1a; flex-wrap: wrap; }
+button {
+  background: #1a1a2e; border: 1px solid #333366;
+  color: #aaaacc; padding: 6px 14px; cursor: pointer;
+  font-family: inherit; font-size: 12px; border-radius: 4px;
+  transition: background 0.15s;
+}
+button:hover { background: #252545; }
+#info { padding: 8px 20px; font-size: 11px; color: #9aaac5; background: #080812; }
+@media (max-width: 600px) { canvas { height: min(55vh, 450px); } }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="btns">
+  <button onclick="setPreset(8,8)">经典 n=8</button>
+  <button onclick="setPreset(3,10)">三叶 n=3</button>
+  <button onclick="setPreset(5,10)">五芒 n=5</button>
+  <button onclick="setPreset(10,8)">十次 n=10</button>
+  <button onclick="togglePause()" id="pbtn">⏸ 暂停</button>
+</div>
+<div id="controls">
+  <div class="ctrl">
+    <label>幂次 Power: <strong id="pv">8.0</strong></label>
+    <input type="range" id="power" min="2" max="12" step="0.5" value="8">
+  </div>
+  <div class="ctrl">
+    <label>迭代次数 Iterations: <strong id="iv">8</strong></label>
+    <input type="range" id="iters" min="3" max="14" step="1" value="8">
+  </div>
+  <div class="ctrl">
+    <label>相机距离 Zoom: <strong id="zv">2.5</strong></label>
+    <input type="range" id="zoom" min="1.5" max="5" step="0.1" value="2.5">
+  </div>
+  <div class="ctrl">
+    <label>自转速度 Speed: <strong id="sv">0.3</strong></label>
+    <input type="range" id="speed" min="0" max="1" step="0.05" value="0.3">
+  </div>
+</div>
+<div id="info">拖拽画布手动旋转 · WebGL GLSL 光线步进实时渲染 · Mandelbulb 3D Fractal</div>
+
+<script>
+const canvas = document.getElementById('c');
+const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+
+function resize() {
+  canvas.width = canvas.clientWidth * (window.devicePixelRatio || 1);
+  canvas.height = canvas.clientHeight * (window.devicePixelRatio || 1);
+}
+resize();
+window.addEventListener('resize', resize);
+
+const VS = `
+attribute vec2 p;
+void main(){gl_Position=vec4(p,0,1);}
+`;
+
+const FS = `
+precision highp float;
+uniform vec2 res;
+uniform float time, power, iters, zoom, rotX, rotY, speed;
+
+float bulb(vec3 pos){
+  vec3 z=pos; float dr=1.,r=0.;
+  for(int i=0;i<14;i++){
+    if(float(i)>=iters) break;
+    r=length(z); if(r>2.) break;
+    float th=acos(clamp(z.z/r,-1.,1.));
+    float ph=atan(z.y,z.x);
+    dr=pow(r,power-1.)*power*dr+1.;
+    float zr=pow(r,power);
+    z=zr*vec3(sin(th*power)*cos(ph*power),
+               sin(th*power)*sin(ph*power),
+               cos(th*power))+pos;
+  }
+  return .5*log(r)*r/dr;
+}
+
+vec3 norm(vec3 p){
+  float e=.001;
+  return normalize(vec3(
+    bulb(p+vec3(e,0,0))-bulb(p-vec3(e,0,0)),
+    bulb(p+vec3(0,e,0))-bulb(p-vec3(0,e,0)),
+    bulb(p+vec3(0,0,e))-bulb(p-vec3(0,0,e))));
+}
+
+mat3 ry(float a){return mat3(cos(a),0,sin(a),0,1,0,-sin(a),0,cos(a));}
+mat3 rx(float a){return mat3(1,0,0,0,cos(a),-sin(a),0,sin(a),cos(a));}
+
+void main(){
+  vec2 uv=(gl_FragCoord.xy/res)*2.-1.;
+  uv.x*=res.x/res.y;
+  float ang=time*speed+rotY;
+  mat3 rot=rx(rotX)*ry(ang);
+  vec3 ro=rot*vec3(0,0,zoom);
+  vec3 rd=normalize(rot*vec3(uv,-2.));
+  float t=0.;
+  vec3 col=vec3(.03,.03,.07);
+  for(int i=0;i<90;i++){
+    vec3 p=ro+rd*t;
+    float d=bulb(p);
+    if(d<.0008){
+      vec3 n=norm(p);
+      vec3 l1=normalize(vec3(1.5,2.,1.));
+      vec3 l2=normalize(vec3(-1.,-1.,.5));
+      float diff=max(dot(n,l1),0.)*0.7+max(dot(n,l2),0.)*0.2;
+      float spec=pow(max(dot(reflect(-l1,n),-rd),0.),48.)*0.5;
+      float ao=1.-float(i)/90.;
+      vec3 baseCol=mix(vec3(.05,.2,.55),vec3(.95,.5,.05),1.-ao);
+      baseCol=mix(baseCol,vec3(.4,.8,.9),ao*ao*.3);
+      col=(baseCol*(0.1+diff)+vec3(.9,.95,1.)*spec)*ao;
+      col=mix(col,vec3(.03,.03,.07),smoothstep(0.,1.,t/7.));
+      break;
+    }
+    t+=max(d*.7,.002);
+    if(t>9.) break;
+  }
+  col=pow(max(col,0.),vec3(.4545));
+  gl_FragColor=vec4(col,1.);
+}
+`;
+
+function mkShader(type, src) {
+  const s = gl.createShader(type);
+  gl.shaderSource(s, src); gl.compileShader(s);
+  if (!gl.getShaderParameter(s, gl.COMPILE_STATUS))
+    console.error(gl.getShaderInfoLog(s));
+  return s;
+}
+const prog = gl.createProgram();
+gl.attachShader(prog, mkShader(gl.VERTEX_SHADER, VS));
+gl.attachShader(prog, mkShader(gl.FRAGMENT_SHADER, FS));
+gl.linkProgram(prog);
+
+const buf = gl.createBuffer();
+gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,1,1]), gl.STATIC_DRAW);
+
+let paused=false, rotX=0.4, rotY=0, dragStart=null, dragRX, dragRY;
+let uPower=8, uIters=8, uZoom=2.5, uSpeed=0.3;
+
+function render(t) {
+  requestAnimationFrame(render);
+  if (paused) return;
+  const w=canvas.width, h=canvas.height;
+  gl.viewport(0,0,w,h);
+  gl.useProgram(prog);
+  const ap=gl.getAttribLocation(prog,'p');
+  gl.enableVertexAttribArray(ap);
+  gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+  gl.vertexAttribPointer(ap,2,gl.FLOAT,false,0,0);
+  const u=n=>gl.getUniformLocation(prog,n);
+  gl.uniform2f(u('res'),w,h);
+  gl.uniform1f(u('time'),t*.001);
+  gl.uniform1f(u('power'),uPower);
+  gl.uniform1f(u('iters'),uIters);
+  gl.uniform1f(u('zoom'),uZoom);
+  gl.uniform1f(u('rotX'),rotX);
+  gl.uniform1f(u('rotY'),rotY);
+  gl.uniform1f(u('speed'),uSpeed);
+  gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
+}
+requestAnimationFrame(render);
+
+function togglePause(){
+  paused=!paused;
+  document.getElementById('pbtn').textContent=paused?'▶ 继续':'⏸ 暂停';
+}
+function setPreset(p,i){
+  uPower=p; uIters=i;
+  document.getElementById('power').value=p;
+  document.getElementById('iters').value=i;
+  document.getElementById('pv').textContent=p.toFixed(1);
+  document.getElementById('iv').textContent=i;
+}
+
+document.getElementById('power').oninput=e=>{uPower=+e.target.value;document.getElementById('pv').textContent=(+e.target.value).toFixed(1);};
+document.getElementById('iters').oninput=e=>{uIters=+e.target.value;document.getElementById('iv').textContent=e.target.value;};
+document.getElementById('zoom').oninput=e=>{uZoom=+e.target.value;document.getElementById('zv').textContent=(+e.target.value).toFixed(1);};
+document.getElementById('speed').oninput=e=>{uSpeed=+e.target.value;document.getElementById('sv').textContent=(+e.target.value).toFixed(2);};
+
+canvas.addEventListener('mousedown',e=>{dragStart={x:e.clientX,y:e.clientY};dragRX=rotX;dragRY=rotY;});
+window.addEventListener('mousemove',e=>{if(!dragStart)return;rotY=dragRY+(e.clientX-dragStart.x)*.012;rotX=dragRX+(e.clientY-dragStart.y)*.012;});
+window.addEventListener('mouseup',()=>dragStart=null);
+canvas.addEventListener('touchstart',e=>{const t=e.touches[0];dragStart={x:t.clientX,y:t.clientY};dragRX=rotX;dragRY=rotY;},{passive:true});
+canvas.addEventListener('touchmove',e=>{if(!dragStart)return;const t=e.touches[0];rotY=dragRY+(t.clientX-dragStart.x)*.012;rotX=dragRX+(t.clientY-dragStart.y)*.012;},{passive:true});
+canvas.addEventListener('touchend',()=>dragStart=null);
+</script>
+</body>
+</html>
