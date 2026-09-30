@@ -36,7 +36,7 @@
     <script class="keep-theme-configurations">
     const KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"lmblog.fun","root":"/","language":"zh-CN","path":"search.json"}
-    KEEP.theme_config = {"base_info":{"primary_color":"#009999","title":"韦建杰的个人站","subtitle":"实践 · 阅读 · 思考","author":"韦建杰","avatar":"/images/avatar.jpg","logo":"/images/logo.png","favicon":"/images/logo_head.png"},"menu":{"home":"/         || fa-solid fa-house-chimney","有趣的东西":"/diy       || fa-solid fa-screwdriver-wrench","读书":"/books    || fa-solid fa-book-open","关于我":"/about  || fa-solid fa-address-card"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"记录成长","hitokoto":false},"social_contact":{"enable":false,"links":{"github":"https://github.com/LM-WJ/","weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":"wuhufufu@gmail.com"}},"scroll":{"progress_bar":false,"percent":true,"hide_header":true},"home":{"announcement":null,"category":false,"tag":true,"post_datetime":"created || fa-solid fa-pen-to-square"},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"created_datetime_icon":"fa-solid fa-star","updated_datetime_icon":"fa-solid fa-arrows-rotate","word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#009999","title":"韦建杰的个人站","subtitle":"实践 · 阅读 · 思考","author":"韦建杰","avatar":"/images/avatar.jpg","logo":"/images/logo.png","favicon":"/images/logo_head.png"},"menu":{"home":"/         || fa-solid fa-house-chimney","有趣的东西":"/diy       || fa-solid fa-screwdriver-wrench","读书笔记":"/books    || fa-solid fa-book-open","随笔":"/essays/  || fa-solid fa-pen-nib","关于我":"/about  || fa-solid fa-address-card"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"记录成长","hitokoto":false},"social_contact":{"enable":false,"links":{"github":"https://github.com/LM-WJ/","weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":"wuhufufu@gmail.com"}},"scroll":{"progress_bar":false,"percent":true,"hide_header":true},"home":{"announcement":null,"category":false,"tag":true,"post_datetime":"created || fa-solid fa-pen-to-square"},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"created_datetime_icon":"fa-solid fa-star","updated_datetime_icon":"fa-solid fa-arrows-rotate","word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.5"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
@@ -109,7 +109,19 @@
                                 
                                     <i class="menu-text-color menu-icon fa-solid fa-book-open"></i>
                                 
-                                读书
+                                读书笔记
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/essays/">
+                                
+                                    <i class="menu-text-color menu-icon fa-solid fa-pen-nib"></i>
+                                
+                                随笔
                                 
                             </a>
                             
@@ -189,7 +201,23 @@
                                     <i class="drawer-menu-text-color menu-icon fa-solid fa-book-open"></i>
                                 </span>
                             
-                            读书
+                            读书笔记
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/essays/">
+                            
+                                <span class="menu-icon-wrap border-box flex-center">
+                                    <i class="drawer-menu-text-color menu-icon fa-solid fa-pen-nib"></i>
+                                </span>
+                            
+                            随笔
                         </a>
                         
                     </label>
@@ -265,6 +293,7 @@
             </div>
         </div>
 
+        
         <div class="page-main-content-bottom border-box">
             
 <footer class="footer border-box">
@@ -286,7 +315,7 @@
             
                 <span class="count-item border-box word">
                     <span class="item-type border-box">总字数</span>
-                    <span class="item-value border-box word">8.9k</span>
+                    <span class="item-value border-box word">9.3k</span>
                 </span>
             
 
@@ -305,6 +334,7 @@
 </footer>
 
         </div>
+        
     </div>
 
     <!-- post tools -->

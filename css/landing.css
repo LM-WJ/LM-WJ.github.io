@@ -1,0 +1,28 @@
+.page-container.landing-page .page-main-content { min-height: 100vh; min-height: 100svh; padding-top: 0; justify-content: center; }
+.landing-page .page-main-content-top { display: none; }
+.landing-brand-header { position: absolute; top: 28px; left: clamp(24px, 5vw, 80px); z-index: 2; }
+.landing-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text-color-1); text-decoration: none; font-family: var(--header-title-font-family); font-size: 17px; font-weight: 600; line-height: 1.4; letter-spacing: 1px; }
+.landing-brand img { display: block; width: 54px; height: 30px; object-fit: contain; border-radius: .4rem; }
+.landing-brand:hover { color: var(--primary-color); }
+.landing-brand:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 5px; }
+.landing-page .page-main-content-middle { margin-top: 64px; }
+.landing { box-sizing: border-box; width: 100%; padding: clamp(40px, 8vh, 90px) 0; text-align: center; font-family: var(--base-font-family); }
+.landing-eyebrow { margin: 0 0 28px; color: var(--primary-color); font-size: 15px; line-height: 1.8; letter-spacing: .2em; }
+.landing h1 { margin: 0; color: var(--text-color-1); font-size: clamp(30px, 5.5vw, 60px); font-weight: 500; line-height: 1.6; letter-spacing: .06em; }
+.landing-description { margin: 22px 0; color: var(--text-color-2); font-size: clamp(20px, 2.6vw, 28px); line-height: 1.8; letter-spacing: .12em; }
+.landing-intro { margin: 0 0 52px; color: var(--text-color-3); font-size: 17px; line-height: 2.2; letter-spacing: .04em; }
+.landing-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; max-width: 760px; margin: 0 auto; }
+.landing-nav a { box-sizing: border-box; display: flex; justify-content: center; align-items: center; gap: 10px; padding: 20px 12px; color: var(--text-color-3); background: var(--content-background-color); border: 1px solid var(--border-color); border-radius: var(--box-border-radius); box-shadow: 0 0 8px var(--shadow-color); font-size: 15px; text-decoration: none; transition: color .2s, border-color .2s, box-shadow .2s; }
+.landing-nav a i { color: var(--primary-color); }
+.landing-nav a:hover { color: var(--primary-color); border-color: var(--primary-color); box-shadow: 0 0 12px var(--shadow-hover-color); }
+.landing-nav a:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .landing-brand-header { top: 22px; }
+  .landing-brand { font-size: 15px; gap: 8px; }
+  .landing-brand img { width: 46px; height: 26px; }
+  .landing { padding: 40px 0; }
+  .landing-eyebrow { font-size: 13px; margin-bottom: 22px; }
+  .landing-description { font-size: 20px; margin: 18px 0; }
+  .landing-intro { font-size: 14px; margin-bottom: 36px; }
+  .landing-nav { grid-template-columns: repeat(2, 1fr); gap: 14px; max-width: 380px; }
+}
