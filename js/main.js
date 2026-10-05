@@ -10,7 +10,8 @@ window.addEventListener('DOMContentLoaded', () => {
     localStorageKey: 'KEEP-THEME-STATUS',
     encryptKey: 'KEEP-ENCRYPT',
     styleStatus: {
-      isDark: false,
+      isDark: window.SiteTheme.getMode() === 'dark',
+      themePreference: window.SiteTheme.getPreference(),
       fontSizeLevel: 0,
       isShowToc: true
     },
@@ -35,14 +36,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // set styleStatus to localStorage
   KEEP.setStyleStatus = () => {
-    localStorage.setItem(KEEP.themeInfo.localStorageKey, JSON.stringify(KEEP.themeInfo.styleStatus))
+    KEEP.themeInfo.styleStatus.isDark = window.SiteTheme.getMode() === 'dark'
+    KEEP.themeInfo.styleStatus.themePreference = window.SiteTheme.getPreference()
+    try { localStorage.setItem(KEEP.themeInfo.localStorageKey, JSON.stringify(KEEP.themeInfo.styleStatus)) } catch {}
   }
 
   // get styleStatus from localStorage
   KEEP.getStyleStatus = () => {
-    let temp = localStorage.getItem(KEEP.themeInfo.localStorageKey)
-    if (temp) {
-      temp = JSON.parse(temp)
+    let temp
+    try { temp = JSON.parse(localStorage.getItem(KEEP.themeInfo.localStorageKey)) } catch {}
+    if (temp && typeof temp === 'object' && !Array.isArray(temp)) {
       for (let key in KEEP.themeInfo.styleStatus) {
         KEEP.themeInfo.styleStatus[key] = temp[key]
       }

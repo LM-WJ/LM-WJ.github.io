@@ -1,0 +1,12 @@
+.bulb-stage{position:relative;overflow:hidden;border-radius:13px;background:#e8f0e8;min-height:320px}
+:root[data-theme=dark] .bulb-stage{background:#0e1b24}
+#c{display:block;width:100%;height:480px;cursor:grab;touch-action:none}
+#c:active{cursor:grabbing}
+#c:focus-visible{outline-offset:-4px}
+.bulb-actions{margin-top:18px}
+.bulb-actions small{font-size:12px;margin-left:auto}
+.bulb-presets{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.bulb-presets button{font-size:12px;padding:9px 6px}
+.bulb-error{padding:55px 25px;text-align:center;color:var(--ink)}
+.bulb-error p{color:var(--muted);font-size:14px}
+@media(max-width:700px){#c{height:350px}.bulb-actions small{width:100%;margin-left:0}.workspace>#bulb-controls{order:0}}

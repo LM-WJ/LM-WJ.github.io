@@ -1,71 +1,31 @@
-/* global KEEP */
+/* global KEEP, SiteTheme */
 
 KEEP.initModeToggle = () => {
+  const button = document.querySelector('.tool-toggle-theme-mode')
+  const icon = button && button.querySelector('i')
+  KEEP.themeUnsubscribe && KEEP.themeUnsubscribe()
   KEEP.utils.modeToggle = {
-    themeModeToggleBtn: document.querySelector('.tool-toggle-theme-mode'),
-    iconDom: document.querySelector('.tool-toggle-theme-mode i'),
-
-    enableLightMode() {
-      document.documentElement.classList.remove('dark-mode')
-      document.documentElement.classList.add('light-mode')
-      this.iconDom && (this.iconDom.className = 'fas fa-moon')
-      KEEP.themeInfo.styleStatus.isDark = false
-      KEEP.setStyleStatus()
-    },
-
-    enableDarkMode() {
-      document.documentElement.classList.add('dark-mode')
-      document.documentElement.classList.remove('light-mode')
-      this.iconDom && (this.iconDom.className = 'fas fa-sun')
-      KEEP.themeInfo.styleStatus.isDark = true
-      KEEP.setStyleStatus()
-    },
-
-    isDarkPrefersColorScheme() {
-      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)')
-    },
-
-    initModeStatus() {
-      const configMode = KEEP.theme_config?.base_info?.mode
-
-      if (configMode === 'dark') {
-        this.enableDarkMode()
-        return
-      }
-
-      if (configMode === 'light') {
-        this.enableLightMode()
-        return
-      }
-
-      const styleStatus = KEEP.getStyleStatus()
-
-      if (styleStatus) {
-        styleStatus.isDark ? this.enableDarkMode() : this.enableLightMode()
-      } else {
-        this.isDarkPrefersColorScheme().matches ? this.enableDarkMode() : this.enableLightMode()
-      }
-    },
-
-    initModeToggleButton() {
-      if (this.themeModeToggleBtn && !this.themeModeToggleBtn?.hasClickListener) {
-        this.themeModeToggleBtn.addEventListener('click', () => {
-          const isDark = document.documentElement.classList.contains('dark-mode')
-          isDark ? this.enableLightMode() : this.enableDarkMode()
-        })
-        this.themeModeToggleBtn.hasClickListener = true
-      }
-    },
-
-    initModeAutoTrigger() {
-      const isDarkMode = this.isDarkPrefersColorScheme()
-      isDarkMode.addEventListener('change', (e) => {
-        e.matches ? this.enableDarkMode() : this.enableLightMode()
-      })
-    }
+    enableLightMode: () => SiteTheme.setMode('light'),
+    enableDarkMode: () => SiteTheme.setMode('dark')
   }
-
-  KEEP.utils.modeToggle.initModeStatus()
-  KEEP.utils.modeToggle.initModeToggleButton()
-  KEEP.utils.modeToggle.initModeAutoTrigger()
+  KEEP.themeUnsubscribe = SiteTheme.subscribe(mode => {
+    const isDark = mode === 'dark'
+    KEEP.themeInfo.styleStatus.isDark = isDark
+    KEEP.themeInfo.styleStatus.themePreference = SiteTheme.getPreference()
+    if (icon) icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon'
+    if (button) {
+      button.setAttribute('aria-label', isDark ? '切换到浅色模式' : '切换到深色模式')
+      button.setAttribute('aria-pressed', String(isDark))
+    }
+  })
+  if (button && !button.hasClickListener) {
+    button.setAttribute('role', 'button')
+    button.setAttribute('tabindex', '0')
+    const toggle = () => SiteTheme.setMode(SiteTheme.getMode() === 'dark' ? 'light' : 'dark')
+    button.addEventListener('click', toggle)
+    button.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggle() }
+    })
+    button.hasClickListener = true
+  }
 }
