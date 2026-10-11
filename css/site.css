@@ -1,0 +1,7 @@
+.essays-header { margin-bottom: 30px; }
+.essays-header h1 { margin: 0 0 12px; color: var(--text-color-1); font-size: 32px; }
+.essays-header p { margin: 0; color: var(--text-color-3); font-size: 14px; line-height: 1.9; }
+.essays-header a { color: var(--primary-color); text-decoration: none; }
+.keep-markdown-body img { max-width: 100%; height: auto; }
+.keep-markdown-body video { display: block; width: 100%; max-width: 760px; margin: 24px auto; border-radius: var(--box-border-radius); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }

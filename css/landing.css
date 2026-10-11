@@ -1,4 +1,4 @@
-.page-container.landing-page .page-main-content { min-height: 100vh; min-height: 100svh; padding-top: 0; justify-content: center; }
+.page-container.landing-page .page-main-content { min-height: 100vh; min-height: 100svh; padding-top: 0; }
 .landing-page .page-main-content-top { display: none; }
 .landing-brand-header { position: absolute; top: 28px; left: clamp(24px, 5vw, 80px); z-index: 2; }
 .landing-brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text-color-1); text-decoration: none; font-family: var(--header-title-font-family); font-size: 17px; font-weight: 600; line-height: 1.4; letter-spacing: 1px; }
@@ -6,7 +6,7 @@
 .landing-brand:hover { color: var(--primary-color); }
 .landing-brand:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 5px; }
 .landing-page .page-main-content-middle { margin-top: 64px; }
-.landing { box-sizing: border-box; width: 100%; padding: clamp(40px, 8vh, 90px) 0; text-align: center; font-family: var(--base-font-family); }
+.landing { box-sizing: border-box; width: 100%; padding: clamp(40px, 7vh, 72px) 0 48px; text-align: center; font-family: var(--base-font-family); }
 .landing-eyebrow { margin: 0 0 28px; color: var(--primary-color); font-size: 15px; line-height: 1.8; letter-spacing: .2em; }
 .landing h1 { margin: 0; color: var(--text-color-1); font-size: clamp(30px, 5.5vw, 60px); font-weight: 500; line-height: 1.6; letter-spacing: .06em; }
 .landing-description { margin: 22px 0; color: var(--text-color-2); font-size: clamp(20px, 2.6vw, 28px); line-height: 1.8; letter-spacing: .12em; }
@@ -26,3 +26,23 @@
   .landing-intro { font-size: 14px; margin-bottom: 36px; }
   .landing-nav { grid-template-columns: repeat(2, 1fr); gap: 14px; max-width: 380px; }
 }
+.landing-discover { max-width: 960px; margin: 0 auto 48px; padding-top: 28px; border-top: 1px solid var(--border-color); }
+.landing-section-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; }
+.landing-section-heading h2 { margin: 0; font-size: 22px; font-weight: 500; color: var(--text-color-1); }
+.landing-section-heading a { font-size: 13px; color: var(--primary-color); text-decoration: none; }
+.landing-recent-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.landing-recent-card { padding: 22px; background: var(--content-background-color); border: 1px solid var(--border-color); border-radius: var(--box-border-radius); }
+.landing-recent-card time { font-size: 12px; color: var(--text-color-3); }
+.landing-recent-card h3 { margin: 12px 0; font-size: 17px; line-height: 1.7; }
+.landing-recent-card h3 a { color: var(--text-color-1); text-decoration: none; }
+.landing-recent-card h3 a:hover { color: var(--primary-color); }
+.landing-recent-card p { margin: 0; color: var(--text-color-3); font-size: 14px; line-height: 1.9; }
+.landing-experiment { display: flex; align-items: center; gap: 22px; margin-top: 22px; padding: 24px; text-decoration: none; color: var(--text-color-2); background: var(--background-color-2); border: 1px solid var(--border-color); border-radius: var(--box-border-radius); }
+.landing-experiment-icon { font-size: 34px; color: var(--primary-color); }
+.landing-experiment small, .landing-experiment strong, .landing-experiment > span > span { display: block; }
+.landing-experiment small { font-size: 12px; color: var(--primary-color); }
+.landing-experiment strong { margin: 5px 0; font-size: 20px; font-weight: 500; color: var(--text-color-1); }
+.landing-experiment > span > span { font-size: 14px; line-height: 1.8; }
+.landing-experiment-arrow { margin-left: auto; color: var(--primary-color); }
+.landing-discover a:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 4px; }
+@media (max-width: 700px) { .landing-recent-grid { grid-template-columns: 1fr; } .landing-experiment { padding: 20px; gap: 16px; } }

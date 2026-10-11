@@ -280,7 +280,7 @@ KEEP.initUtils = () => {
       const zoomInImgMask = document.querySelector('.zoom-in-image-mask')
       const zoomInImg = zoomInImgMask?.querySelector('.zoom-in-image')
       const imgDomList = [
-        ...document.querySelectorAll('.keep-markdown-body img'),
+        ...document.querySelectorAll('.keep-markdown-body img:not([data-no-zoom])'),
         ...document.querySelectorAll('.photo-album-box img')
       ]
 

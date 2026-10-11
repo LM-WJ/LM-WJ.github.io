@@ -2,11 +2,27 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="阅读, 实践, 思考, 个人博客">
     
     <meta name="description" content="关于韦建杰的兴趣、经历、想法与联系方式。">
     <meta name="author" content="韦建杰">
+    
+    
+    
+        <link rel="canonical" href="https://lmblog.fun/about/">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="韦建杰的个人站">
+    <meta property="og:title" content="一个普通的人类 | 韦建杰的个人站">
+    <meta property="og:description" content="关于韦建杰的兴趣、经历、想法与联系方式。">
+    <meta property="og:url" content="https://lmblog.fun/about/">
+    <meta property="og:image" content="https://lmblog.fun/images/logo.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="一个普通的人类 | 韦建杰的个人站">
+    <meta name="twitter:description" content="关于韦建杰的兴趣、经历、想法与联系方式。">
+    <meta name="twitter:image" content="https://lmblog.fun/images/logo.png">
     
     <title>
         
@@ -17,6 +33,9 @@
     <script src="/diy/site-theme.js"></script>
     
 <link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/site.css">
 
     
         <link rel="shortcut icon" href="/images/logo_head.png">
@@ -329,76 +348,47 @@
   .keep-markdown-body .about-profile dt { font-size: .9em; }
   .keep-markdown-body .about-profile > .about-profile-summary { margin: 0 -18px; padding: 20px 18px; }
 }
-.contact-icons {
-  text-align: center;
-  margin-top: 20px;
+.keep-markdown-body .contact-icons { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; width: 100%; margin: 24px 0; }
+.keep-markdown-body .contact-icons a { box-sizing: border-box; display: flex; align-items: center; justify-content: center; gap: 12px; min-width: 0; min-height: 84px; padding: 20px 16px; border: 1px solid var(--border-color); border-radius: var(--box-border-radius); background: var(--content-background-color); color: var(--text-color-2); text-decoration: none; font-size: 15px; line-height: 1.5; }
+.keep-markdown-body .contact-icons a i { flex-shrink: 0; margin: 0; font-size: 24px; color: var(--primary-color); }
+.keep-markdown-body .contact-icons a span { min-width: 0; overflow-wrap: anywhere; }
+.keep-markdown-body .contact-icons a:hover { color: var(--primary-color); border-color: var(--primary-color); }
+@media (max-width: 700px) {
+  .keep-markdown-body .contact-icons { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .keep-markdown-body .contact-icons a { min-height: 76px; padding: 18px 12px; font-size: 14px; }
 }
-
-.contact-icons a {
-  display: inline-block;
-  margin: 0 40px; /* 间隔更大 */
-  color: #333;
-  text-decoration: none;
-  position: relative;
-}
-
-.contact-icons a i {
-  font-size: 40px !important;  /* 强制设置图标大小 */
-  transition: color 0.3s;
-}
-
-/* 悬停时不同颜色 */
-.contact-icons a.github:hover i { color: #000; }
-.contact-icons a.telegram:hover i { color: #229ED9; }
-.contact-icons a.email:hover i { color: #FF5722; }
-.contact-icons a.wechat:hover i { color: #1AAD19; }
-
-/* 微信二维码弹窗 */
-.contact-icons a.wechat .qr {
-  display: none;
-  position: absolute;
-  top: -400px;   /* 图标上方 */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 280px !important;   /* 强制宽度 */
-  max-width: none !important; /* 防止主题限制最大宽度 */
-  height: auto !important;   /* 保持比例缩放 */
-  padding: 5px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  z-index: 10;
-}
-
-
-@media screen and (max-width: 768px) {
-  .contact-icons a.wechat .qr {
-    width: 70% !important;   /* 手机端宽度 = 屏幕的 70% */
-    top: -400px;             /* 根据需要调整位置 */
-  }
-}
-
-.contact-icons a.wechat:hover .qr {
-  display: block;
-}
+.contact-icons a:focus-visible, .wechat-dialog button:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 4px; }
+.wechat-dialog { box-sizing: border-box; width: min(360px, calc(100vw - 32px)); max-height: calc(100svh - 32px); overflow-y: auto; padding: 24px; border: 1px solid var(--border-color); border-radius: 12px; background: var(--content-background-color); color: var(--text-color-1); }
+.wechat-dialog::backdrop { background: rgba(0, 0, 0, .55); }
+.wechat-dialog h2 { margin: 0 0 12px; font-size: 20px; }
+.wechat-dialog p { font-size: 14px; }
+.wechat-dialog img { display: block; width: 100%; height: auto; margin: 16px auto; background: #fff; }
+.wechat-dialog button { padding: 8px 20px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--background-color-2); color: var(--text-color-1); cursor: pointer; font: inherit; }
+.wechat-dialog form { display: flex; justify-content: flex-end; margin: 0; }
 </style>
 
 <div class="contact-icons">
-  <a href="https://github.com/lm-wj" target="_blank" class="github">
-    <i class="fab fa-github"></i>
+  <a href="https://github.com/lm-wj" target="_blank" rel="noopener noreferrer" aria-label="在新窗口打开我的 GitHub">
+    <i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span>
   </a>
-  <a href="https://t.me/lmblogfun" target="_blank" class="telegram">
-    <i class="fab fa-telegram"></i>
+  <a href="https://t.me/lmblogfun" target="_blank" rel="noopener noreferrer" aria-label="在新窗口打开我的 Telegram">
+    <i class="fab fa-telegram" aria-hidden="true"></i><span>Telegram</span>
   </a>
-  <a href="mailto:wuhufufu@gmail.com" class="email">
-    <i class="fas fa-envelope"></i>
+  <a href="mailto:wuhufufu@gmail.com" aria-label="给我发邮件">
+    <i class="fas fa-envelope" aria-hidden="true"></i><span>邮件</span>
   </a>
-  <a href="javascript:void(0);" class="wechat">
-    <i class="fab fa-weixin"></i>
-    <img     src="/images/wechat_qr.jpeg"   alt="微信二维码" class="qr">
+  <a id="wechat-contact" href="/images/wechat_qr.jpeg" aria-haspopup="dialog" aria-controls="wechat-dialog" aria-label="查看微信二维码">
+    <i class="fab fa-weixin" aria-hidden="true"></i><span>微信</span>
   </a>
 </div>
+<dialog id="wechat-dialog" class="wechat-dialog" aria-labelledby="wechat-dialog-title" aria-describedby="wechat-dialog-description">
+  <div>
+    <h2 id="wechat-dialog-title">微信联系</h2>
+    <p id="wechat-dialog-description">用微信扫描二维码，也可以保存图片后识别。</p>
+    <img     src="/images/wechat_qr.jpeg"   alt="韦建杰的微信二维码" width="845" height="892" loading="lazy" decoding="async" data-no-zoom>
+    <form method="dialog"><button type="submit" autofocus>关闭</button></form>
+  </div>
+</dialog>
 
                 
             </div>
@@ -579,6 +569,11 @@
 
 
 <!-- local search -->
+
+    
+<script src="/js/contact-dialog.js"></script>
+
+
 
     
 <script src="/js/local-search.js"></script>
