@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1840 1440" width="1840" height="1440">
+  <defs>
+    <style>
+      .bg { fill: #F7F3EA; }
+      .frame-outer { fill: none; stroke: #D5CBB8; stroke-width: 3; }
+      .frame-inner { fill: none; stroke: #E2D9C8; stroke-width: 1.2; }
+      .cloud { fill: none; stroke: #DED4C1; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .title { font-family: "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif; font-size: 38px; font-weight: bold; fill: #1A1A1A; letter-spacing: 3px; }
+      .node-title { font-family: "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif; font-size: 23px; font-weight: bold; fill: #1A1A1A; }
+      .node-sub { font-family: "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif; font-size: 14px; font-weight: bold; fill: #2C2C2C; }
+      .text-main { font-family: "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif; font-size: 17px; font-weight: bold; fill: #1A1A1A; }
+      .text-shang { font-family: "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif; font-size: 18px; font-weight: bold; fill: #8F3527; }
+      .text-zhou { font-family: "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif; font-size: 18px; font-weight: bold; fill: #355263; }
+      .text-note { font-family: "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif; font-size: 13px; fill: #4A4A4A; }
+      .era-tag { font-family: "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif; font-size: 13px; font-weight: bold; fill: #8C4A32; }
+      .era-bracket { fill: none; stroke: #B88B6A; stroke-width: 1.5; }
+      .seal-text { font-family: "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif; font-size: 11px; font-weight: bold; fill: #9E3D2E; }
+      .seal-solid-text { font-family: "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif; font-size: 12px; font-weight: bold; fill: #FFFFFF; }
+      .deco-seal { fill: none; stroke: #C28B7C; stroke-width: 1.5; opacity: 0.7; }
+      .deco-seal-fill { fill: #C28B7C; opacity: 0.7; }
+      .deco-seal-text { font-family: "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif; font-size: 12px; font-weight: bold; fill: #C28B7C; opacity: 0.75; }
+      .deco-seal-white { font-family: "Noto Serif CJK SC", "Songti SC", "STSong", "SimSun", serif; font-size: 11px; font-weight: bold; fill: #F7F3EA; }
+      .line { stroke: #4A4A4A; stroke-width: 1.6; fill: none; }
+      .line-side { stroke: #7A7A7A; stroke-width: 1.4; fill: none; }
+      .box-red { fill: #F4EAE4; stroke: #9E3D2E; stroke-width: 2.2; }
+      .box-blue { fill: #E8EFF2; stroke: #4A6572; stroke-width: 2.2; }
+      .box-ochre { fill: #F5EEE4; stroke: #9C6B3B; stroke-width: 2.2; }
+      .box-green { fill: #E9F1EC; stroke: #4E7D63; stroke-width: 2.2; }
+      .seal-circle { fill: #F4EAE4; stroke: #9E3D2E; stroke-width: 1.6; }
+      .seal-solid { fill: #9E3D2E; stroke: #7A291C; stroke-width: 1; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4A4A4A" />
+    </marker>
+  </defs>
+
+  <!-- 1. 宣纸背景与双层古典边框 -->
+  <rect width="1840" height="1440" class="bg" />
+  <rect x="18" y="18" width="1804" height="1404" class="frame-outer" />
+  <rect x="24" y="24" width="1792" height="1392" class="frame-inner" />
+
+  <!-- 2. 四角极简国风祥云纹装饰 -->
+  <g class="cloud" transform="translate(25, 220)">
+    <path d="M 0 40 Q 35 15 70 35 Q 95 5 135 25 Q 165 40 140 65 Q 180 65 190 90 Q 195 115 160 120 L 0 120" />
+    <path d="M 20 75 Q 50 55 85 75 Q 115 60 135 85" />
+    <path d="M 0 95 Q 40 85 70 105" />
+  </g>
+  <g class="cloud" transform="translate(1560, 30)">
+    <path d="M 255 150 Q 210 125 175 145 Q 145 110 100 130 Q 65 115 55 80 Q 45 40 90 35 Q 115 5 160 20 L 255 20" />
+    <path d="M 235 95 Q 195 75 160 95 Q 125 80 105 105" />
+  </g>
+  <g class="cloud" transform="translate(25, 1200)">
+    <path d="M 0 80 Q 45 55 85 75 Q 120 40 175 65 Q 215 50 245 85 Q 285 75 310 105 Q 330 135 295 165 Q 345 175 360 210 L 0 210" />
+    <path d="M 30 130 Q 80 105 130 130 Q 175 110 210 145 Q 250 135 270 165" />
+    <path d="M 15 175 Q 70 155 125 180 Q 170 165 205 195" />
+  </g>
+  <g class="cloud" transform="translate(1520, 1220)">
+    <path d="M 295 60 Q 250 35 210 55 Q 170 25 125 50 Q 85 65 105 95 Q 60 100 50 130 Q 45 165 90 170 L 295 170" />
+    <path d="M 265 115 Q 220 90 175 115 Q 135 100 110 130" />
+  </g>
+
+  <!-- 3. 国风印章装饰（右上椭圆闲章 + 左下三方印章） -->
+  <ellipse cx="1730" cy="95" rx="22" ry="38" class="deco-seal" />
+  <ellipse cx="1730" cy="95" rx="19" ry="35" class="deco-seal" />
+  <text x="1730" y="81" text-anchor="middle" class="deco-seal-text">华夏</text>
+  <text x="1730" y="99" text-anchor="middle" class="deco-seal-text">世系</text>
+  <text x="1730" y="117" text-anchor="middle" class="deco-seal-text">源流</text>
+
+  <g transform="translate(75, 1020)">
+    <rect x="0" y="0" width="38" height="38" rx="3" class="deco-seal" />
+    <text x="19" y="16" text-anchor="middle" class="deco-seal-text">五帝</text>
+    <text x="19" y="32" text-anchor="middle" class="deco-seal-text">世系</text>
+
+    <rect x="0" y="52" width="38" height="38" rx="3" class="deco-seal-fill" />
+    <text x="19" y="68" text-anchor="middle" class="deco-seal-white">三代</text>
+    <text x="19" y="84" text-anchor="middle" class="deco-seal-white">同源</text>
+
+    <rect x="0" y="104" width="38" height="46" rx="3" class="deco-seal" />
+    <text x="19" y="122" text-anchor="middle" class="deco-seal-text">史记</text>
+    <text x="19" y="140" text-anchor="middle" class="deco-seal-text">考略</text>
+  </g>
+
+  <!-- 4. 顶部主标题 -->
+  <text x="920" y="78" text-anchor="middle" class="title">五帝与夏商周三代世系脉络 —— 历史世系与源流图谱</text>
+
+  <!-- ==================== 顶层：【黄帝】 ==================== -->
+  <rect x="835" y="110" width="150" height="64" class="box-red" />
+  <text x="910" y="140" text-anchor="middle" class="node-title">【黄帝】</text>
+  <text x="910" y="162" text-anchor="middle" class="node-sub">轩辕氏</text>
+  <circle cx="1013" cy="142" r="22" class="seal-circle" />
+  <text x="1013" y="139" text-anchor="middle" class="seal-text">五帝</text>
+  <text x="1013" y="153" text-anchor="middle" class="seal-text">之首</text>
+
+  <!-- 黄帝分叉线 -->
+  <line x1="910" y1="174" x2="910" y2="198" class="line" />
+  <line x1="360" y1="198" x2="1235" y2="198" class="line" />
+  <line x1="360" y1="198" x2="360" y2="222" class="line" marker-end="url(#arrow)" />
+  <line x1="1235" y1="198" x2="1235" y2="222" class="line" marker-end="url(#arrow)" />
+
+  <!-- ==================== 左支：长子昌意 & 【帝颛顼】 ==================== -->
+  <text x="360" y="244" text-anchor="middle" class="text-main">长子：昌意 <tspan class="text-note">（降居若水）</tspan></text>
+  <line x1="360" y1="252" x2="360" y2="278" class="line" marker-end="url(#arrow)" />
+
+  <rect x="285" y="284" width="150" height="64" class="box-blue" />
+  <text x="360" y="314" text-anchor="middle" class="node-title">【帝颛顼】</text>
+  <text x="360" y="336" text-anchor="middle" class="node-sub">高阳氏</text>
+  <circle cx="463" cy="316" r="22" class="seal-circle" />
+  <text x="463" y="313" text-anchor="middle" class="seal-text">五帝</text>
+  <text x="463" y="327" text-anchor="middle" class="seal-text">之二</text>
+
+  <!-- 帝颛顼分叉线（左：穷蝉支线；右：鲧支线，下拉体现时代较晚） -->
+  <line x1="360" y1="348" x2="360" y2="376" class="line" />
+  <line x1="210" y1="376" x2="520" y2="376" class="line" />
+  <line x1="210" y1="376" x2="210" y2="404" class="line" marker-end="url(#arrow)" />
+  <line x1="520" y1="376" x2="520" y2="510" class="line" marker-end="url(#arrow)" />
+
+  <!-- 颛顼左支：穷蝉 -> 敬康 -> 句望 -> 桥牛 -> 瞽叟 -> 【帝舜】 -->
+  <text x="210" y="426" text-anchor="middle" class="text-main">穷蝉</text>
+  <line x1="210" y1="434" x2="210" y2="458" class="line" marker-end="url(#arrow)" />
+
+  <text x="210" y="480" text-anchor="middle" class="text-main">敬康</text>
+  <line x1="210" y1="488" x2="210" y2="512" class="line" marker-end="url(#arrow)" />
+
+  <text x="210" y="534" text-anchor="middle" class="text-main">句望</text>
+  <line x1="210" y1="542" x2="210" y2="566" class="line" marker-end="url(#arrow)" />
+
+  <text x="210" y="588" text-anchor="middle" class="text-main">桥牛</text>
+  <line x1="210" y1="596" x2="210" y2="620" class="line" marker-end="url(#arrow)" />
+
+  <text x="210" y="642" text-anchor="middle" class="text-main">瞽叟</text>
+  <line x1="210" y1="650" x2="210" y2="676" class="line" marker-end="url(#arrow)" />
+
+  <rect x="135" y="682" width="150" height="84" class="box-ochre" />
+  <text x="210" y="712" text-anchor="middle" class="node-title">【帝舜】</text>
+  <text x="210" y="734" text-anchor="middle" class="node-sub">重华 / 有虞氏</text>
+  <text x="210" y="754" text-anchor="middle" class="text-note">五帝之五｜受尧禅让</text>
+  <circle cx="313" cy="724" r="22" class="seal-circle" />
+  <text x="313" y="721" text-anchor="middle" class="seal-text">五帝</text>
+  <text x="313" y="735" text-anchor="middle" class="seal-text">之五</text>
+
+  <!-- 颛顼右支：鲧 -> 《大禹》 -> 《启》 -->
+  <text x="520" y="534" text-anchor="middle" class="text-main">鲧</text>
+  <text x="520" y="554" text-anchor="middle" class="text-note">（尧舜时治水，世代记载较简但时代较晚）</text>
+  <line x1="520" y1="564" x2="520" y2="594" class="line" marker-end="url(#arrow)" />
+
+  <rect x="445" y="600" width="150" height="72" class="box-green" />
+  <text x="520" y="630" text-anchor="middle" class="node-title">《大禹》</text>
+  <text x="520" y="652" text-anchor="middle" class="node-sub">名文命，夏朝奠基者</text>
+  <line x1="606" y1="612" x2="606" y2="660" class="line-side" />
+  <text x="616" y="632" text-anchor="start" class="text-note">受舜禅让，</text>
+  <text x="616" y="652" text-anchor="start" class="text-note">时代晚于舜</text>
+
+  <line x1="520" y1="672" x2="520" y2="706" class="line" marker-end="url(#arrow)" />
+
+  <text x="520" y="734" text-anchor="middle" class="node-title">《启》</text>
+  <text x="520" y="756" text-anchor="middle" class="text-note">夏朝第一位世袭君主</text>
+  <text x="520" y="775" text-anchor="middle" class="text-note">家天下之始</text>
+  <circle cx="615" cy="744" r="20" class="seal-solid" />
+  <text x="615" y="749" text-anchor="middle" class="seal-solid-text">夏朝</text>
+
+
+  <!-- ==================== 右支：次子玄嚣 -> 蟜极 -> 【帝喾】 ==================== -->
+  <text x="1235" y="244" text-anchor="middle" class="text-main">次子：玄嚣 <tspan class="text-note">（一名青阳，降居江水）</tspan></text>
+  <line x1="1235" y1="252" x2="1235" y2="276" class="line" marker-end="url(#arrow)" />
+
+  <text x="1235" y="298" text-anchor="middle" class="text-main">蟜极</text>
+  <line x1="1235" y1="306" x2="1235" y2="330" class="line" marker-end="url(#arrow)" />
+
+  <rect x="1160" y="336" width="150" height="64" class="box-ochre" />
+  <text x="1235" y="366" text-anchor="middle" class="node-title">【帝喾】</text>
+  <text x="1235" y="388" text-anchor="middle" class="node-sub">高辛氏</text>
+  <circle cx="1338" cy="368" r="22" class="seal-circle" />
+  <text x="1338" y="365" text-anchor="middle" class="seal-text">五帝</text>
+  <text x="1338" y="379" text-anchor="middle" class="seal-text">之三</text>
+
+  <!-- 帝喾四子分叉线 -->
+  <line x1="1235" y1="400" x2="1235" y2="426" class="line" />
+  <line x1="820" y1="426" x2="1600" y2="426" class="line" />
+  <line x1="820" y1="426" x2="820" y2="452" class="line" marker-end="url(#arrow)" />
+  <line x1="1060" y1="426" x2="1060" y2="452" class="line" marker-end="url(#arrow)" />
+  <line x1="1330" y1="426" x2="1330" y2="452" class="line" marker-end="url(#arrow)" />
+  <line x1="1600" y1="426" x2="1600" y2="452" class="line" marker-end="url(#arrow)" />
+
+  <!-- 1. 挚（帝挚） -->
+  <text x="820" y="476" text-anchor="middle" class="text-main">挚（帝挚）</text>
+  <text x="820" y="498" text-anchor="middle" class="text-note">帝喾四妃娵訾氏女所生</text>
+  <text x="820" y="518" text-anchor="middle" class="text-note">继帝喾位，后让位于弟尧</text>
+
+  <!-- 2. 【帝尧】 -->
+  <rect x="955" y="458" width="210" height="86" class="box-red" />
+  <text x="1060" y="488" text-anchor="middle" class="node-title">【帝尧】</text>
+  <text x="1060" y="510" text-anchor="middle" class="node-sub">名放勋 / 陶唐氏</text>
+  <text x="1060" y="530" text-anchor="middle" class="text-note">五帝之四｜帝喾三妃陈锋氏女所生</text>
+  <circle cx="1193" cy="501" r="22" class="seal-circle" />
+  <text x="1193" y="498" text-anchor="middle" class="seal-text">五帝</text>
+  <text x="1193" y="512" text-anchor="middle" class="seal-text">之四</text>
+
+  <!-- 3. 契（商朝始祖支线，每一代之间均有明确箭头） -->
+  <text x="1330" y="476" text-anchor="middle" class="text-shang">契（商朝始祖）</text>
+  <text x="1330" y="496" text-anchor="middle" class="text-note">帝喾次妃简狄所生｜佐禹治水</text>
+  <line x1="1330" y1="504" x2="1330" y2="528" class="line" marker-end="url(#arrow)" />
+
+  <!-- [夏初] 昭明 -> 相土 -> 昌若 -> 曹圉 -->
+  <path d="M 1262 534 L 1254 534 L 1254 704 L 1262 704" class="era-bracket" />
+  <text x="1246" y="624" text-anchor="end" class="era-tag">[夏初]</text>
+
+  <text x="1330" y="550" text-anchor="middle" class="text-main">昭明</text>
+  <line x1="1330" y1="556" x2="1330" y2="578" class="line" marker-end="url(#arrow)" />
+  <text x="1330" y="598" text-anchor="middle" class="text-main">相土</text>
+  <line x1="1330" y1="604" x2="1330" y2="626" class="line" marker-end="url(#arrow)" />
+  <text x="1330" y="646" text-anchor="middle" class="text-main">昌若</text>
+  <line x1="1330" y1="652" x2="1330" y2="674" class="line" marker-end="url(#arrow)" />
+  <text x="1330" y="694" text-anchor="middle" class="text-main">曹圉</text>
+  <line x1="1330" y1="700" x2="1330" y2="724" class="line" marker-end="url(#arrow)" />
+
+  <!-- [夏中] 冥 -> 振（王亥） -> 微（上甲微） -->
+  <path d="M 1262 730 L 1254 730 L 1254 852 L 1262 852" class="era-bracket" />
+  <text x="1246" y="796" text-anchor="end" class="era-tag">[夏中]</text>
+
+  <text x="1330" y="746" text-anchor="middle" class="text-main">冥</text>
+  <line x1="1330" y1="752" x2="1330" y2="774" class="line" marker-end="url(#arrow)" />
+  <text x="1330" y="794" text-anchor="middle" class="text-main">振（王亥）</text>
+  <line x1="1330" y1="800" x2="1330" y2="822" class="line" marker-end="url(#arrow)" />
+  <text x="1330" y="842" text-anchor="middle" class="text-main">微（上甲微）</text>
+  <line x1="1330" y1="848" x2="1330" y2="872" class="line" marker-end="url(#arrow)" />
+
+  <!-- [夏末] 报丁 -> 报乙 -> 报丙 -> 主壬 -> 主癸 -->
+  <path d="M 1262 878 L 1254 878 L 1254 1096 L 1262 1096" class="era-bracket" />
+  <text x="1246" y="992" text-anchor="end" class="era-tag">[夏末]</text>
+
+  <text x="1330" y="894" text-anchor="middle" class="text-main">报丁</text>
+  <line x1="1330" y1="900" x2="1330" y2="922" class="line" marker-end="url(#arrow)" />
+  <text x="1330" y="942" text-anchor="middle" class="text-main">报乙</text>
+  <line x1="1330" y1="948" x2="1330" y2="970" class="line" marker-end="url(#arrow)" />
+  <text x="1330" y="990" text-anchor="middle" class="text-main">报丙</text>
+  <line x1="1330" y1="996" x2="1330" y2="1018" class="line" marker-end="url(#arrow)" />
+  <text x="1330" y="1038" text-anchor="middle" class="text-main">主壬</text>
+  <line x1="1330" y1="1044" x2="1330" y2="1066" class="line" marker-end="url(#arrow)" />
+  <text x="1330" y="1086" text-anchor="middle" class="text-main">主癸</text>
+  <line x1="1330" y1="1092" x2="1330" y2="1120" class="line" marker-end="url(#arrow)" />
+
+  <!-- 《商汤》 -->
+  <text x="1330" y="1148" text-anchor="middle" class="node-title">《商汤》</text>
+  <text x="1330" y="1170" text-anchor="middle" class="text-note">名履 / 天乙，商朝开国君主</text>
+  <text x="1330" y="1189" text-anchor="middle" class="text-note">灭夏建商</text>
+  <circle cx="1435" cy="1156" r="20" class="seal-solid" />
+  <text x="1435" y="1161" text-anchor="middle" class="seal-solid-text">商朝</text>
+
+
+  <!-- 4. 后稷（周朝始祖支线，每一代之间均有明确箭头） -->
+  <text x="1600" y="476" text-anchor="middle" class="text-zhou">后稷（名弃，周朝始祖）</text>
+  <text x="1600" y="496" text-anchor="middle" class="text-note">帝喾元妃姜原所生｜尧舜农师</text>
+  <line x1="1600" y1="504" x2="1600" y2="528" class="line" marker-end="url(#arrow)" />
+
+  <!-- [夏代] 不窋 -> 鞠 -> 公刘 -> 庆节 -->
+  <path d="M 1515 534 L 1507 534 L 1507 704 L 1515 704" class="era-bracket" />
+  <text x="1499" y="624" text-anchor="end" class="era-tag">[夏代]</text>
+
+  <text x="1600" y="550" text-anchor="middle" class="text-main">不窋</text>
+  <line x1="1600" y1="556" x2="1600" y2="578" class="line" marker-end="url(#arrow)" />
+  <text x="1600" y="598" text-anchor="middle" class="text-main">鞠</text>
+  <line x1="1600" y1="604" x2="1600" y2="626" class="line" marker-end="url(#arrow)" />
+  <text x="1600" y="646" text-anchor="middle" class="text-main">公刘</text>
+  <line x1="1600" y1="652" x2="1600" y2="674" class="line" marker-end="url(#arrow)" />
+  <text x="1600" y="694" text-anchor="middle" class="text-main">庆节</text>
+  <line x1="1600" y1="700" x2="1600" y2="724" class="line" marker-end="url(#arrow)" />
+
+  <!-- [商初] 皇仆 -> 差弗 -> 毁隃 -> 公非 -->
+  <path d="M 1515 730 L 1507 730 L 1507 900 L 1515 900" class="era-bracket" />
+  <text x="1499" y="820" text-anchor="end" class="era-tag">[商初]</text>
+
+  <text x="1600" y="746" text-anchor="middle" class="text-main">皇仆</text>
+  <line x1="1600" y1="752" x2="1600" y2="774" class="line" marker-end="url(#arrow)" />
+  <text x="1600" y="794" text-anchor="middle" class="text-main">差弗</text>
+  <line x1="1600" y1="800" x2="1600" y2="822" class="line" marker-end="url(#arrow)" />
+  <text x="1600" y="842" text-anchor="middle" class="text-main">毁隃</text>
+  <line x1="1600" y1="848" x2="1600" y2="870" class="line" marker-end="url(#arrow)" />
+  <text x="1600" y="890" text-anchor="middle" class="text-main">公非</text>
+  <line x1="1600" y1="896" x2="1600" y2="920" class="line" marker-end="url(#arrow)" />
+
+  <!-- [商中] 高圉 -> 亚圉 -> 公叔祖类 -->
+  <path d="M 1515 926 L 1507 926 L 1507 1048 L 1515 1048" class="era-bracket" />
+  <text x="1499" y="992" text-anchor="end" class="era-tag">[商中]</text>
+
+  <text x="1600" y="942" text-anchor="middle" class="text-main">高圉</text>
+  <line x1="1600" y1="948" x2="1600" y2="970" class="line" marker-end="url(#arrow)" />
+  <text x="1600" y="990" text-anchor="middle" class="text-main">亚圉</text>
+  <line x1="1600" y1="996" x2="1600" y2="1018" class="line" marker-end="url(#arrow)" />
+  <text x="1600" y="1038" text-anchor="middle" class="text-main">公叔祖类</text>
+  <line x1="1600" y1="1044" x2="1600" y2="1068" class="line" marker-end="url(#arrow)" />
+
+  <!-- [商末] 古公亶父（周太王） -> 季历（王季） -> 姬昌（周文王） -->
+  <path d="M 1515 1074 L 1507 1074 L 1507 1196 L 1515 1196" class="era-bracket" />
+  <text x="1499" y="1140" text-anchor="end" class="era-tag">[商末]</text>
+
+  <text x="1600" y="1090" text-anchor="middle" class="text-main">古公亶父（周太王）</text>
+  <line x1="1600" y1="1096" x2="1600" y2="1118" class="line" marker-end="url(#arrow)" />
+  <text x="1600" y="1138" text-anchor="middle" class="text-main">季历（王季）</text>
+  <line x1="1600" y1="1144" x2="1600" y2="1166" class="line" marker-end="url(#arrow)" />
+  <text x="1600" y="1186" text-anchor="middle" class="text-main">姬昌（周文王）</text>
+  <line x1="1600" y1="1192" x2="1600" y2="1220" class="line" marker-end="url(#arrow)" />
+
+  <!-- 《周武王》 -->
+  <text x="1600" y="1248" text-anchor="middle" class="node-title">《周武王》</text>
+  <text x="1600" y="1270" text-anchor="middle" class="text-note">姬发，周朝开国君主</text>
+  <text x="1600" y="1289" text-anchor="middle" class="text-note">灭商建周</text>
+  <circle cx="1705" cy="1256" r="20" class="seal-solid" />
+  <text x="1705" y="1261" text-anchor="middle" class="seal-solid-text">周朝</text>
+</svg>
