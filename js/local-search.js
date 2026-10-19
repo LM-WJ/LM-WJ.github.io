@@ -12,6 +12,7 @@ KEEP.initLocalSearch = () => {
   // Popup Window
   let isfetched = false
   let datas
+  let searchRequest = 0
   let isXml = true
   if (searchPath.length === 0) {
     searchPath = 'search.xml'
@@ -217,12 +218,17 @@ KEEP.initLocalSearch = () => {
   }
 
   const fetchData = () => {
-    fetch(KEEP.hexo_config.root + searchPath)
+    const request = ++searchRequest
+    const language = window.SiteLanguage?.getLanguage() || 'zh-CN'
+    const localized = language !== 'zh-CN'
+    const path = localized ? `i18n/search-${language}.json` : searchPath
+    return fetch(KEEP.hexo_config.root + path)
       .then((response) => response.text())
       .then((res) => {
+        if (request !== searchRequest) return
         // Get the contents from search data
         isfetched = true
-        datas = isXml
+        datas = isXml && !localized
           ? [...new DOMParser().parseFromString(res, 'text/xml').querySelectorAll('entry')].map(
               (element) => {
                 return {
@@ -245,8 +251,15 @@ KEEP.initLocalSearch = () => {
         // Remove loading animation
         const noResultDom = document.querySelector('#no-result')
         noResultDom && (noResultDom.innerHTML = '<i class="fas fa-search fa-5x"></i>')
+        inputEventFunction()
       })
+      .catch(() => { if (request === searchRequest) isfetched = false })
   }
+
+  document.addEventListener('site:language', () => {
+    isfetched = false
+    if (document.querySelector('.search-pop-overlay').classList.contains('active') || KEEP.theme_config?.local_search?.preload === true) fetchData()
+  })
 
   if (KEEP.theme_config?.local_search?.preload === true) {
     fetchData()
