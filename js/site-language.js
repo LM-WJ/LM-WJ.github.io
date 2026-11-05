@@ -64,16 +64,14 @@
   }
   function translate(source) {
     if (language === 'zh-CN' || !/[\u3400-\u9fff]/.test(source)) return source;
+    // Character conversion must preserve the source's spaces and line breaks.
+    if (language === 'zh-Hant') return converter(source);
     const key = normalize(source);
-    let output;
-    if (language === 'zh-Hant') output = converter(key);
-    else {
-      output = catalog[key];
-      if (output === undefined) {
-        for (const [pattern, replacement] of patterns) {
-          const match = key.match(pattern);
-          if (match) { output = replacement.replace(/\{(\d+)\}/g, (_, i) => match[Number(i) + 1]); break; }
-        }
+    let output = catalog[key];
+    if (output === undefined) {
+      for (const [pattern, replacement] of patterns) {
+        const match = key.match(pattern);
+        if (match) { output = replacement.replace(/\{(\d+)\}/g, (_, i) => match[Number(i) + 1]); break; }
       }
     }
     if (output === undefined) return source;
