@@ -1,6 +1,4 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
+<!DOCTYPE html><html lang="zh-CN"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>曼德尔球</title>
@@ -8,43 +6,44 @@
   <script src="/diy/site-theme.js"></script>
   <link rel="stylesheet" href="/diy/lab.css">
   <link rel="stylesheet" href="/diy/mandelbulb/mandelbulb.css">
-  <script defer src="/diy/lab.js"></script>
-  <script defer src="/diy/mandelbulb/shaders.js"></script>
-  <script defer src="/diy/mandelbulb/viewer.js"></script>
-<link rel="canonical" href="https://lmblog.fun/diy/mandelbulb/"><meta property="og:type" content="website"><meta property="og:site_name" content="韦建杰的个人站"><meta property="og:title" content="曼德尔球"><meta property="og:description" content="旋转视角，调整幂次和迭代次数，查看三维分形。"><meta property="og:url" content="https://lmblog.fun/diy/mandelbulb/"><meta property="og:image" content="https://lmblog.fun/images/logo.png"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="曼德尔球"><meta name="twitter:description" content="旋转视角，调整幂次和迭代次数，查看三维分形。"><meta name="twitter:image" content="https://lmblog.fun/images/logo.png"><link rel="stylesheet" href="/css/language.css?v=5fd6c4c39c66"><script defer data-site-language data-catalog="/i18n/en-c00c2e532f80.json" src="/js/site-language.js?v=da7b15d2b3bc"></script></head>
-<body>
+  <script defer="" src="/diy/lab.js"></script>
+  <script defer="" src="/diy/mandelbulb/shaders.js"></script>
+  <script defer="" src="/diy/mandelbulb/viewer.js"></script>
+<link rel="canonical" href="https://lmblog.fun/diy/mandelbulb/"><meta property="og:type" content="website"><meta property="og:site_name" content="韦建杰的个人站"><meta property="og:title" content="曼德尔球"><meta property="og:description" content="旋转视角，调整幂次和迭代次数，查看三维分形。"><meta property="og:url" content="https://lmblog.fun/diy/mandelbulb/"><meta property="og:image" content="https://lmblog.fun/images/logo.png"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="曼德尔球"><meta name="twitter:description" content="旋转视角，调整幂次和迭代次数，查看三维分形。"><meta name="twitter:image" content="https://lmblog.fun/images/logo.png"><link rel="stylesheet" href="/diy/work-pages.css"><link rel="stylesheet" href="/css/language.css?v=5fd6c4c39c66"><link rel="stylesheet" href="/css/theme.css?v=86a249194de7"><script defer data-site-language data-catalog="/i18n/en-7809c6d4147b.json" src="/js/site-language.js?v=da7b15d2b3bc"></script></head>
+<body class="work-mandelbulb">
   <a class="skip" href="#main">跳到演示</a>
   <header id="site-header"></header>
   <main id="main">
-    <section class="hero"><div><h1>曼德尔球</h1><p class="intro">旋转视角，调整幂次和迭代次数，查看三维分形。</p></div></section>
+    <section class="hero"><div><h1>曼德尔球</h1><p class="intro">拖动转一转，再靠近看看。</p></div></section>
     <noscript>启用 JavaScript 后可以探索三维分形。曼德尔球以球坐标幂运算反复迭代，产生复杂的边界。</noscript>
-    <div class="workspace">
+    <div class="workspace bulb-workspace">
       <section class="panel">
-        <div class="panel-head"><h2>一颗会改变形状的球</h2><span class="badge">拖动 · 转动视角</span></div>
+        
         <div class="bulb-stage">
           <canvas id="c" tabindex="0" role="img" aria-label="交互曼德尔球：拖动旋转，方向键调整视角，空格切换自转" aria-describedby="canvas-help"></canvas>
-          <div id="render-error" class="bulb-error" role="status" hidden><h3>暂时无法显示三维分形</h3><p>请确认浏览器支持硬件加速，或换一个浏览器打开。</p><button id="retry-render" type="button">重新加载</button></div>
-        </div>
-        <div class="row bulb-actions"><button id="pbtn" type="button" class="primary">暂停自转</button><button id="reset-view" type="button">重置视角</button><small id="render-status" role="status">正在准备画面…</small></div>
+          <div id="render-error" class="bulb-error" role="status" hidden=""><h3>暂时无法显示三维分形</h3><p>请确认浏览器支持硬件加速，或换一个浏览器打开。</p><button id="retry-render" type="button">重新加载</button></div>
+        </div><div class="row bulb-actions"><button id="pbtn" type="button" class="primary">暂停自转</button><button id="reset-view" type="button">重置视角</button><small id="render-status" role="status">正在准备画面…</small></div>
+        
         <p id="canvas-help" class="caption">拖动或轻触画面转动；键盘方向键也能调整视角。暂停后仍可拖动和修改参数。</p>
-        <div class="stats" aria-live="polite"><div class="stat"><b id="stat-power">8.0</b><span>幂次 n</span></div><div class="stat"><b id="stat-iters">8</b><span>最大迭代次数</span></div><div class="stat"><b id="stat-zoom">2.5</b><span>相机距离</span></div></div>
+        <div class="screen-reader" aria-live="polite"><div class="stat"><b id="stat-power">8.0</b><span>幂次 n</span></div><div class="stat"><b id="stat-iters">8</b><span>最大迭代次数</span></div><div class="stat"><b id="stat-zoom">2.5</b><span>相机距离</span></div></div>
       </section>
       <aside class="panel controls" id="bulb-controls">
-        <div class="control wide"><span class="control-title">从一种形状开始</span><div id="presets" class="bulb-presets"><button type="button" data-power="8" data-iters="8" aria-pressed="true">经典 · n = 8</button><button type="button" data-power="3" data-iters="10" aria-pressed="false">三次 · n = 3</button><button type="button" data-power="5" data-iters="10" aria-pressed="false">五次 · n = 5</button><button type="button" data-power="10" data-iters="8" aria-pressed="false">十次 · n = 10</button></div></div>
+        <div class="control wide"><span class="control-title">换个形状</span><div id="presets" class="bulb-presets"><button type="button" data-power="8" data-iters="8" aria-pressed="true">经典 · n = 8</button><button type="button" data-power="3" data-iters="10" aria-pressed="false">三次 · n = 3</button><button type="button" data-power="5" data-iters="10" aria-pressed="false">五次 · n = 5</button><button type="button" data-power="10" data-iters="8" aria-pressed="false">十次 · n = 10</button></div></div>
         <div class="control"><label for="power">幂次 <output id="pv" for="power">8.0</output></label><input type="range" id="power" min="2" max="12" step="0.5" value="8"><small>改变球坐标中的幂运算，探索不同的对称性。</small></div>
-        <div class="control"><label for="iters">迭代次数 <output id="iv" for="iters">8</output></label><input type="range" id="iters" min="3" max="14" step="1" value="8"><small>次数越多，边界细节越丰富，计算也更复杂。</small></div>
+        
         <div class="control"><label for="zoom">相机距离 <output id="zv" for="zoom">2.5</output></label><input type="range" id="zoom" min="1.5" max="5" step="0.1" value="2.5"><small>减小距离，靠近表面细节。</small></div>
-        <div class="control"><label for="speed">自转速度 <output id="sv" for="speed">0.30</output></label><input type="range" id="speed" min="0" max="1" step="0.05" value="0.3"><small>设为 0 即停止自转，拖动仍然有效。</small></div>
-        <div class="hint wide">试试先暂停，再把迭代次数从 3 增加到 12。相同的规则反复应用，边界会显露出越来越多的细节。</div>
-      </aside>
+        
+        
+      <details class="bulb-extra"><summary>细节与自转</summary><div class="control"><label for="iters">迭代次数 <output id="iv" for="iters">8</output></label><input type="range" id="iters" min="3" max="14" step="1" value="8"><small>次数越多，边界细节越丰富，计算也更复杂。</small></div><div class="control"><label for="speed">自转速度 <output id="sv" for="speed">0.30</output></label><input type="range" id="speed" min="0" max="1" step="0.05" value="0.3"><small>设为 0 即停止自转，拖动仍然有效。</small></div></details></aside>
     </div>
-    <section class="explain">
-      <div><span class="step">01 · 简单的规则</span><h3>重复一次，再重复一次</h3><p>每个点都经过类似 z → zⁿ + c 的迭代。球坐标形式的幂运算把这个构想扩展到三维，形成曼德尔球。</p></div>
-      <div><span class="step">02 · 复杂的边界</span><h3>从形状到细节</h3><p>幂次决定整体形态，迭代次数影响边界的精细程度。这个实时演示使用有限次数，展示分形的近似表面。</p></div>
-      <div><span class="step">03 · 颜色与光线</span><h3>颜色帮助看清层次</h3><p>颜色、阴影和反光用于呈现表面深浅；它们不是分形自带的物理属性。光线步进让我们从不同角度观察它。</p></div>
-    </section>
+    <details class="work-notes"><summary>这个形状是怎么算出来的？</summary><section class="work-note-content">
+      <div><h3>重复一次，再重复一次</h3><p>每个点都经过类似 z → zⁿ + c 的迭代。球坐标形式的幂运算把这个构想扩展到三维，形成曼德尔球。</p></div>
+      <div><h3>从形状到细节</h3><p>幂次决定整体形态，迭代次数影响边界的精细程度。这个实时演示使用有限次数，展示分形的近似表面。</p></div>
+      <div><h3>颜色帮助看清层次</h3><p>颜色、阴影和反光用于呈现表面深浅；它们不是分形自带的物理属性。光线步进让我们从不同角度观察它。</p></div>
+    </section></details>
     <details class="sources"><summary>演示说明</summary><ul><li>画面为有限迭代与距离估计的近似，屏幕像素无法呈现无限细节。</li><li>调整参数后，程序会重新绘制；页面进入后台时暂停渲染。选择减少动态效果的设备默认关闭自转。</li><li>画布背景与页面一起切换深浅色，六个探索页和博客共用同一个主题设置。</li></ul></details>
   </main>
   <footer id="site-footer"></footer>
-</body>
-</html>
+
+
+</body></html>

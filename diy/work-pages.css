@@ -1,0 +1,166 @@
+/* Three different work surfaces, sharing only navigation and typography. */
+body:has(.site-language) .topbar .theme-button{display:none}
+body[class*=work-] .topbar{justify-content:flex-start;flex-wrap:nowrap;gap:12px}
+body[class*=work-] .topbar .brand{width:auto;flex-shrink:0}
+body[class*=work-] .topbar .top-actions{margin-left:0;flex-shrink:0}
+body[class*=work-] .topbar>.site-preferences{margin-left:auto}
+/* One radius for every work-page action, including presets and view tools. */
+body[class*=work-] button,body[class*=work-] select,body[class*=work-] input:not([type=range]):not([type=checkbox]),body[class*=work-] textarea{border-radius:8px}
+.work-benford .workspace>.panel,.work-theseus .workspace>.panel{border-radius:0}
+.work-notes{border-top:1px solid var(--line);margin-top:36px;padding-top:20px;max-width:820px}
+.work-notes summary,.bulb-extra summary,.ship-criterion summary{cursor:pointer;font-size:14px;font-weight:600}
+.work-note-content{padding:24px 0 0;max-width:680px}
+.work-note-content>div{margin-bottom:24px}
+.work-note-content h3{font-size:16px;margin-bottom:8px}
+.work-note-content p{font-size:14px;color:var(--muted)}
+.work-mandelbulb main{max-width:1440px;padding-top:30px}
+.work-mandelbulb .hero{margin-bottom:22px}
+.work-mandelbulb .hero>div{display:flex;align-items:baseline;gap:24px;flex-wrap:wrap}
+.work-mandelbulb .hero h1{margin:0}
+.work-mandelbulb .workspace{grid-template-columns:minmax(0,1fr) 220px;gap:28px}
+.work-mandelbulb .workspace>.panel{padding:0;border:0;background:transparent}
+.work-mandelbulb .bulb-stage{border-radius:2px;min-height:420px}
+.work-mandelbulb #c{height:clamp(420px,63vh,760px)}
+.work-mandelbulb #bulb-controls{padding-top:8px}
+.work-mandelbulb .bulb-presets{grid-template-columns:1fr;gap:8px;margin-top:12px}
+.work-mandelbulb .bulb-presets button{text-align:left;border:1px solid var(--line);border-radius:8px;padding:12px}
+.work-mandelbulb .control label{display:flex;justify-content:space-between}
+.work-mandelbulb .control small{line-height:1.7}
+.bulb-extra{border-top:1px solid var(--line);padding-top:16px}
+.bulb-extra>.control{margin-top:20px}
+.work-mandelbulb .bulb-actions{margin-top:12px}
+.work-mandelbulb .bulb-actions button{font-size:13px;padding:7px 12px;border-radius:8px}
+.work-mandelbulb .sources{max-width:820px}
+.work-benford main{max-width:1000px}
+.work-benford .workspace{display:block}
+.work-benford .workspace>.panel{padding:24px 0 0;border:0;border-top:1px solid var(--line);background:transparent}
+.work-benford .data-desk{display:grid;grid-template-columns:minmax(0,1fr) 150px auto;gap:18px;align-items:start;border:0;background:transparent;padding:0 0 20px}
+.work-benford .data-desk>.control{margin:0}
+.work-benford .data-desk>.control:last-child{padding-top:30px}
+.work-benford .data-desk .wide{grid-column:auto}
+.work-benford #custom-control{grid-column:1/-1;grid-row:2}
+.work-benford #custom-data{min-height:120px;border-radius:3px}
+.work-benford button,.work-benford select{border-radius:8px}
+.work-benford .stats{display:flex;gap:36px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;margin-top:0;flex-wrap:wrap}
+.work-benford .stat{background:transparent;border-radius:0;padding:0}
+.work-benford .stat b{font-size:27px}
+.work-benford .stat span{font-size:12px}
+.work-benford #chart{max-height:440px}
+.benford-caution{font-size:13px;color:var(--muted);margin-top:12px;max-width:650px}
+.work-theseus main{max-width:1180px}
+.work-theseus .workspace{display:block}
+.work-theseus .workspace>.panel{padding:0;background:transparent;border:0}
+.work-theseus .boats{gap:40px;margin:28px 0 20px}
+.work-theseus .boat{background:transparent;border-radius:0;padding:0 12px 20px;border-bottom:1px solid var(--line)}
+.work-theseus .boat h3{font-size:16px;font-weight:500}
+.work-theseus .boat svg{margin:20px 0}
+.work-theseus .material-meter{max-width:220px;margin:12px auto;height:3px}
+.work-theseus .ship-tools{display:grid;grid-template-columns:minmax(220px,1fr) auto;gap:10px 32px;padding:18px 0;border:0;background:transparent;border-radius:0}
+.work-theseus .ship-tools>.control{grid-column:auto;margin:0}
+.work-theseus .ship-tools>.control:last-child{grid-column:1/-1}
+.work-theseus .ship-tools .row{padding-top:22px}
+.work-theseus button,.work-theseus select{border-radius:8px}
+.work-theseus .judgment{margin-top:28px;padding-top:28px}
+.work-theseus .judgment h3{font-size:22px;font-weight:500}
+.ship-criterion{margin-top:24px;max-width:620px}
+.ship-criterion>.control{margin-top:18px}
+.ship-criterion .hint{border:0;background:transparent;padding:0;line-height:1.9}
+@media(max-width:700px){
+ .work-mandelbulb .workspace{grid-template-columns:1fr;gap:20px}
+ .work-mandelbulb .hero>div{gap:10px}
+ .work-mandelbulb .bulb-stage{min-height:0}
+ .work-mandelbulb #c{height:min(85vw,420px);min-height:0}
+ .work-mandelbulb #bulb-controls{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+ .work-mandelbulb #bulb-controls>.control{margin-bottom:0}
+ .work-mandelbulb .bulb-presets{grid-template-columns:1fr 1fr}
+ .work-mandelbulb .bulb-extra{grid-column:1/-1}
+ .work-benford .data-desk{grid-template-columns:minmax(0,1fr) 110px;gap:14px}
+ .work-benford .data-desk>.control:last-child{grid-column:1/-1;padding-top:0}
+ .work-benford #custom-control{grid-row:auto}
+ .work-benford .stats{gap:18px}
+ .work-benford .stat b{font-size:23px}
+ .work-benford .panel-head{align-items:start;flex-direction:column;gap:6px}
+ .work-benford .panel-head small{text-align:left}
+ .work-theseus .boats{gap:12px}
+ .work-theseus .boat{padding:0 0 16px}
+ .work-theseus .boat h3{font-size:13px}
+ .work-theseus .ship-tools{grid-template-columns:1fr;gap:12px}
+ .work-theseus .ship-tools .row{padding-top:0}
+ .work-theseus .judgment h3{font-size:19px}
+}
+
+/* Energy: the scale and its controls read as one continuous instrument. */
+.work-kardashev main{max-width:1100px}
+.work-kardashev .workspace,.work-quantum-eraser .workspace,.work-ooparts .workspace{display:block}
+.work-kardashev .workspace>.panel,.work-quantum-eraser .workspace>.panel,.work-ooparts .workspace>.panel{padding:0;border:0;border-radius:0;background:transparent}
+.work-kardashev .cosmos{border-radius:8px}
+.work-kardashev .cosmos>svg{height:auto;max-height:360px}
+.work-kardashev .panel-head .badge{border:0;padding:0}
+.work-kardashev .energy-desk{display:grid;grid-template-columns:1fr 1fr;gap:20px 36px;padding:24px 0 18px;background:transparent;border:0;border-radius:0}
+.work-kardashev .energy-desk>.control{margin:0}
+.work-kardashev .energy-desk>.control:first-child{grid-column:1/-1}
+.work-kardashev .energy-desk>.hint{grid-column:1/-1;border:0;padding:0;background:transparent;color:var(--muted);margin:0}
+.work-kardashev .stats,.work-quantum-eraser .stats{display:flex;flex-wrap:wrap;gap:32px;border-block:1px solid var(--line);padding:18px 0;margin-top:20px}
+.work-kardashev .stat,.work-quantum-eraser .stat{background:transparent;padding:0;border-radius:0;flex:1;min-width:130px}
+/* Photons: show the apparatus once, then group the same recorded events. */
+.work-quantum-eraser main{max-width:1060px}
+.work-quantum-eraser .diagram{margin:24px 0 32px;padding-bottom:16px}
+.work-quantum-eraser .diagram>svg{max-width:700px;margin:auto}
+.work-quantum-eraser .timeline{justify-content:center;flex-wrap:wrap}
+.work-quantum-eraser .timeline span{background:transparent;padding:0}
+.work-quantum-eraser .photon-desk{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:20px 32px;background:transparent;border:0;padding:12px 0 20px}
+.work-quantum-eraser .photon-desk>.control{grid-column:auto;margin:0}
+.work-quantum-eraser .photon-desk>.hint{grid-column:1/-1;padding:0;border:0;background:transparent;color:var(--muted);margin:0}
+.work-quantum-eraser .detectors{grid-template-columns:repeat(3,minmax(0,1fr))}
+.work-quantum-eraser .detectors button:first-child,.work-quantum-eraser .detectors button:last-child{grid-column:auto}
+.work-quantum-eraser #interpretation{border:0;padding:0;background:transparent;line-height:1.9}
+/* Objects: a shelf of three exhibits with the controls under the object. */
+.work-ooparts main{max-width:1000px}
+.work-ooparts .era-nav{gap:12px;border-bottom:1px solid var(--line);padding-bottom:22px}
+.work-ooparts .era-nav button{background:transparent;border-color:var(--line)}
+.work-ooparts .era-nav button[aria-pressed=true]{background:var(--accent);color:var(--bg)}
+.work-ooparts .museum-stage{border-radius:8px;background:#0d1117}
+.work-ooparts .museum-stage>svg{height:auto;max-height:360px;min-height:0}
+.work-ooparts .artifact-tools{padding:22px 0;background:transparent;border:0;border-radius:0;display:block;max-width:760px}
+.work-ooparts .artifact-tools .hint{border:0;padding:0;background:transparent;color:var(--muted);line-height:1.9}
+.work-ooparts .evidence{max-width:720px;padding-top:24px}
+.work-ooparts .evidence h3{font-size:16px;font-weight:500}
+/* Swarm works: keep the canvas, clear away the dashboard chrome. */
+.work-particle-swarm .workspace,.work-ant-colony .workspace{grid-template-columns:minmax(0,1fr) 260px;gap:28px}
+.work-particle-swarm .panel,.work-ant-colony .panel{border:0;border-radius:0;background:transparent;overflow:visible}
+.work-particle-swarm .sidebar,.work-ant-colony .sidebar{background:transparent;border:0;border-radius:0;overflow:visible}
+.work-particle-swarm input:not([type=range]):not([type=checkbox]),.work-ant-colony input:not([type=range]):not([type=checkbox]){background:var(--panel);color:var(--ink);border:1px solid var(--line)}
+.work-particle-swarm .control-section,.work-ant-colony .control-section{padding:18px 0}
+.work-particle-swarm .stage,.work-ant-colony .stage{height:520px;border-radius:8px;background:var(--bg);overflow:hidden}
+.work-particle-swarm .stage-head,.work-ant-colony .stage-head{padding:0 0 14px;border:0}
+.work-particle-swarm .panel-title:before,.work-ant-colony .panel-title:before{display:none}
+.work-particle-swarm .stats,.work-ant-colony .stats{position:static;padding:12px 0 16px;border-block:1px solid var(--line);gap:32px}
+.work-particle-swarm .stage,.work-ant-colony .stage{display:flex;flex-direction:column}
+.work-particle-swarm .stage canvas,.work-ant-colony .stage canvas{min-height:0;flex:1;height:0}
+.work-particle-swarm .stage-tools,.work-ant-colony .stage-tools{top:100px}
+.work-particle-swarm .legend,.work-ant-colony .legend{padding:14px 0;border:0}
+.work-particle-swarm .playbar,.work-ant-colony .playbar{padding:14px 0;background:transparent}
+.work-particle-swarm .explain,.work-ant-colony .explain{background:transparent;border-top:1px solid var(--line);border-radius:0;padding:20px 0}
+.work-particle-swarm .lower-grid,.work-ant-colony .lower-grid{gap:24px;margin-top:24px}
+.work-particle-swarm .lower-grid>.panel,.work-ant-colony .lower-grid>.panel{border-top:1px solid var(--line);padding-top:12px}
+.work-particle-swarm .sub-head,.work-ant-colony .sub-head{padding:0 0 12px}
+.work-particle-swarm .detail,.work-ant-colony .detail{padding:0}
+.work-particle-swarm .coord,.work-ant-colony .coord{background:transparent;border-bottom:1px solid var(--line);border-radius:0;padding:8px 0}
+.advanced-controls>summary{cursor:pointer;list-style:revert}
+.advanced-controls:not([open])>summary{margin-bottom:0}
+@media(max-width:780px){
+ .work-kardashev .energy-desk,.work-quantum-eraser .photon-desk{grid-template-columns:1fr}
+ .work-quantum-eraser .detectors{grid-template-columns:1fr 1fr}
+ .work-quantum-eraser .timeline{justify-content:start;gap:8px 16px;font-size:11px}
+ .work-kardashev .stats,.work-quantum-eraser .stats{gap:18px}
+ .work-kardashev .stat,.work-quantum-eraser .stat{min-width:80px}
+ .work-kardashev .stat b,.work-quantum-eraser .stat b{font-size:22px}
+ .work-ooparts .artifact-tools{display:block}
+ .work-particle-swarm .workspace,.work-ant-colony .workspace{grid-template-columns:1fr}
+ .work-particle-swarm .sidebar,.work-ant-colony .sidebar{display:block;order:0}
+ .work-particle-swarm .stage,.work-ant-colony .stage{height:430px}
+ .work-particle-swarm .stats,.work-ant-colony .stats{gap:18px;padding:12px 0}
+ .work-particle-swarm .lower-grid,.work-ant-colony .lower-grid{grid-template-columns:1fr}
+ .work-particle-swarm .playbar,.work-ant-colony .playbar{flex-wrap:wrap}
+ .work-particle-swarm .stage-tools,.work-ant-colony .stage-tools{top:95px}
+}

@@ -1,0 +1,20 @@
+/* GitHub Primer dark default palette, shared by the blog and standalone works.
+   Reference: primer/primitives src/tokens/base/color/dark/dark.json5. */
+:root[data-theme=dark]{
+  --background-color-1:#0d1117;--background-color-1-transparent:#0d111799;
+  --background-color-2:#151b23;--background-color-3:#212830;
+  --content-background-color:#151b23;
+  --text-color-1:#f0f6fc;--text-color-2:#d1d9e0;--text-color-3:#9198a1;
+  --text-color-4:#9198a1;--text-color-5:#656c76;--text-color-6:#3d444d;
+  --primary-color:#58a6ff;--primary-color-light-1:#79c0ff;--primary-color-light-2:#a5d6ff;
+  --primary-color-dark-1:#388bfd;--primary-color-dark-2:#1f6feb;
+  --border-color:#3d444d;--toc-text-color:#9198a1;
+  --shadow-color:#01040933;--shadow-hover-color:#01040966;
+  --scrollbar-color:#3d444d;--scrollbar-background-color:#0d1117;
+  --selection-color:#264f78;--post-h-bottom-border-color:#3d444d;
+  --header-transparent-background-1:#0d1117cc;--header-transparent-background-2:#151b23e6;
+  --bg:#0d1117;--panel:#151b23;--paper:#151b23;--ink:#f0f6fc;
+  --muted:#9198a1;--line:#3d444d;--accent:#58a6ff;--teal:#58a6ff;
+  --soft:#212830;--teal-bg:#1f6feb26;--orange:#d29922;--selected:#a5d6ff;
+  --danger:#f85149;--shadow:0 12px 35px #01040933;
+}

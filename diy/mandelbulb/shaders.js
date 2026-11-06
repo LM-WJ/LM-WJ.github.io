@@ -43,7 +43,7 @@ void main(){
   vec3 ro=rot*vec3(0,0,zoom);
   vec3 rd=normalize(rot*vec3(uv,-2.));
   float t=0.;
-  vec3 background=pow(mix(vec3(.055,.105,.14),vec3(.91,.94,.91),lightMode),vec3(2.2));
+  vec3 background=pow(mix(vec3(.051,.067,.090),vec3(.91,.94,.91),lightMode),vec3(2.2));
   vec3 col=background;
   for(int i=0;i<90;i++){
     vec3 p=ro+rd*t;
