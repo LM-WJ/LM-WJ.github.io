@@ -36,14 +36,13 @@ mat3 ry(float a){return mat3(cos(a),0,sin(a),0,1,0,-sin(a),0,cos(a));}
 mat3 rx(float a){return mat3(1,0,0,0,cos(a),-sin(a),0,sin(a),cos(a));}
 
 void main(){
-  vec2 uv=(gl_FragCoord.xy/res)*2.-1.;
-  uv.x*=res.x/res.y;
+  vec2 uv=(2.*gl_FragCoord.xy-res)/min(res.x,res.y);
   float ang=time*speed+rotY;
   mat3 rot=rx(rotX)*ry(ang);
   vec3 ro=rot*vec3(0,0,zoom);
   vec3 rd=normalize(rot*vec3(uv,-2.));
   float t=0.;
-  vec3 background=pow(mix(vec3(.051,.067,.090),vec3(.91,.94,.91),lightMode),vec3(2.2));
+  vec3 background=pow(vec3(37./255.),vec3(2.2));
   vec3 col=background;
   for(int i=0;i<90;i++){
     vec3 p=ro+rd*t;

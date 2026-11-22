@@ -159,12 +159,12 @@
   }
   function mount() {
     if (document.querySelector('.site-language')) return;
-    const host = document.querySelector('.landing-brand-header') || document.querySelector('.header-content > .right') || document.querySelector('.topbar');
+    const host = document.querySelector('.header-content > .right') || document.querySelector('.topbar');
     const group = document.createElement('div');
     group.className = 'site-preferences' + (host ? '' : ' site-language-fallback');
     themeButton = document.createElement('button');
     themeButton.type = 'button';
-    themeButton.className = 'header-theme-toggle';
+    themeButton.className = 'header-theme-toggle relief-button';
     themeButton.setAttribute('translate', 'no');
     themeButton.innerHTML = '<svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 13.5A9 9 0 0 1 10.5 3a9 9 0 1 0 10 10.5Z"/></svg>';
     themeButton.addEventListener('click', () => window.SiteTheme?.setMode(window.SiteTheme.getMode() === 'dark' ? 'light' : 'dark'));
@@ -173,6 +173,7 @@
     wrapper.setAttribute('translate', 'no');
     wrapper.innerHTML = '<span class="site-language-symbol" aria-hidden="true">文/A</span><select aria-label="语言 / Language"><option value="zh-CN" lang="zh-CN">简中</option><option value="zh-Hant" lang="zh-Hant">繁中</option><option value="en" lang="en">English</option></select>';
     const select = wrapper.querySelector('select');
+    select.classList.add('relief-button');
     select.value = desired;
     select.addEventListener('change', () => setLanguage(select.value));
     controls.add(select);

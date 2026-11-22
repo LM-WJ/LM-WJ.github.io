@@ -1,5 +1,4 @@
-.bulb-stage{position:relative;overflow:hidden;border-radius:13px;background:#e8f0e8;min-height:320px}
-:root[data-theme=dark] .bulb-stage{background:#0e1b24}
+.bulb-stage{position:relative;overflow:hidden;border-radius:16px;background:#252525;min-height:320px}
 #c{display:block;width:100%;height:480px;cursor:grab;touch-action:none}
 #c:active{cursor:grabbing}
 #c:focus-visible{outline-offset:-4px}
