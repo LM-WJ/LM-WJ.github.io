@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>数学家关系图谱</title>
+  <meta name="description" content="从古典数学到量子场论，沿着师承、合作、通信和争论探索数学家与物理学家的关系。">
+  <link rel="canonical" href="https://lmblog.fun/diy/math-atlas/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="数学家关系图谱">
+  <meta property="og:description" content="从古典数学到量子场论，沿着师承、合作、通信和争论探索数学家与物理学家的关系。">
+  <script src="../site-theme.js"></script>
+  <link rel="stylesheet" href="./atlas.css">
+  <script defer src="./graph-data.js"></script>
+  <script defer src="./graph-view.js"></script>
+  <script defer src="./atlas.js"></script>
+<link rel="stylesheet" href="/css/language.css?v=d47913ffb482"><link rel="stylesheet" href="/css/theme.css?v=86a249194de7"><script defer data-site-language data-catalog="/i18n/en-e8177048e234.json" src="/js/site-language.js?v=cd98bb75c771"></script></head>
+<body>
+  <a class="skip-link" href="#main">跳到图谱</a>
+  <header class="site-bar">
+    <div class="site-bar-inner topbar">
+      <a class="back-link" href="../index.html"><span aria-hidden="true">←</span> 有趣的东西</a>
+      <button id="theme-toggle" class="control-button theme-toggle" type="button" aria-label="切换深浅色">深色模式</button>
+    </div>
+  </header>
+  <main id="main" class="atlas">
+    <header class="intro">
+      <h1>数学家关系图谱</h1>
+    </header>
+
+    <div class="toolbar">
+      <div class="view-controls">
+        <button id="overview-button" class="control-button" type="button" aria-pressed="true">主题总览</button>
+        <label class="visually-hidden" for="topic-select">选择主题</label>
+        <select id="topic-select" class="topic-select"><option value="">全部主题</option></select>
+      </div>
+      <div class="search" role="search">
+        <span class="search-icon" aria-hidden="true"></span>
+        <label class="visually-hidden" for="person-search">搜索人物</label>
+        <input id="person-search" type="search" placeholder="搜索人名，如牛顿或 Newton" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="search-results" aria-expanded="false">
+        <ul id="search-results" class="search-results" role="listbox" aria-label="搜索结果" hidden></ul>
+        <span id="search-status" class="visually-hidden" role="status"></span>
+      </div>
+    </div>
+
+    <div class="workspace">
+      <section class="map-panel" aria-labelledby="map-title">
+        <div class="map-heading">
+          <div><h2 id="map-title" tabindex="-1">主题总览</h2><p id="map-description">选择主题，展开其中的人物与关系。</p></div>
+          <button id="clear-person" class="control-button" type="button" hidden>取消聚焦</button>
+        </div>
+        <div class="map-shell">
+          <div id="map-stage" class="map-stage" aria-label="互动关系图">
+            <canvas id="map-lines" aria-hidden="true"></canvas>
+            <div id="map-nodes" class="map-nodes"></div>
+            <p id="graph-error" class="graph-error" hidden>图谱数据读取失败。请刷新页面再试。</p>
+          </div>
+          <div id="map-tools" class="map-tools" aria-label="地图缩放" hidden>
+            <button id="zoom-out" type="button" aria-label="缩小">−</button>
+            <button id="zoom-in" type="button" aria-label="放大">+</button>
+            <button id="fit-view" type="button">适应视图</button>
+          </div>
+        </div>
+        <div id="relation-filters" class="filters" role="group" aria-label="筛选关系类型"></div>
+      </section>
+      <aside id="inspector" class="inspector" aria-label="图谱详情" tabindex="-1"></aside>
+    </div>
+    <noscript><p>启用 JavaScript 后即可浏览图谱、搜索人物和查看出处。</p></noscript>
+    <footer class="atlas-note">
+      <p>从古典数学到量子场论，沿着人物之间的联系追踪思想的传递。</p>
+      <dl class="metrics" aria-label="图谱规模">
+        <div><dt>人物</dt><dd id="person-count">–</dd></div>
+        <div><dt>主题</dt><dd id="topic-count">–</dd></div>
+        <div><dt>关系</dt><dd id="relation-count">–</dd></div>
+      </dl>
+    </footer>
+  </main>
+</body>
+</html>
